@@ -1,0 +1,15 @@
+<html><head><title>getting-started / Antwar</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"><link rel="alternate" type="application/atom+xml" title="Antwar" href="/atom.xml"><link rel="stylesheet" href="/assets/main.css"></head><body><div><nav class="nav"><a class="nav__link" href="/">Home</a><a class="nav__link" href="/blog">Blog</a><a class="nav__link active" href="/getting-started">Getting started</a></nav><main role="main"><div class="post post--page"><div class="post__content"><h1>Getting started</h1>
+<p>Follow these steps to create your antwar site.</p>
+<pre><code>npm install antwar-cli
+antwar --init &lt;folder name&gt;
+cd &lt;folder name&gt;
+antwar --develop
+</code></pre>
+<p>Then add pages to the pages folder and blog posts to the posts folder. When you're ready, run  <code>antwar --build</code> to generate the static files.</p>
+<h2>Posts</h2>
+<p>Posts are added as <code>.md</code> files to the <code>/posts</code> directory. You need to put a <a href="http://jekyllrb.com/docs/frontmatter/">frontmatter</a> block in the beginning of each file. We have put a couple of example posts in there that you can look at for inspiration.</p>
+<h2>Drafts</h2>
+<p>If you need a place for your posts before they are finished, you should put them in the <code>/drafts</code> folder. They will show up in the development environment so you can see exactly how they will look when you publish them.</p>
+<h2>Pages</h2>
+<p>Pages are React components or <code>.md</code> files. Put them in the <code>/pages</code> folder!</p>
+</div></div></main></div></body></html>
