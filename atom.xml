@@ -1,0 +1,21 @@
+<feed xmlns="http://www.w3.org/2005/Atom"><title >Antwar</title><link href="https://antwarjs.github.io/atom.xml" rel="self"> </link><link href="https://antwarjs.github.io/"> </link><updated >2015-03-15T23:07:32+01:00</updated><id >https://antwarjs.github.io/</id><author ><name >Antwar</name><email >antwar@antwar.com</email></author><entry ><title >The sequel</title><link href="https://antwarjs.github.io/second-post"></link><content type="html"><p>Posts are written in Markdown. More specifically, the kind of Markdown that's called <a href="http://commonmark.org/">Commonmark</a>. We're guessing that you are familiar with Markdown, but anyway. Here are some of the things you can do with it.</p>
+<h2>Headings!</h2>
+<ul>
+<li>Lists</li>
+<li>Are</li>
+<li>Awesome</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Links</a> can take you to wonderful places.</p>
+<p><code>Code can be written inline like this.</code></p>
+<pre><code class="language-javascript">if(youWant) {
+  console.log('You can write code in blocks.');
+}
+else {
+  console.log('Whatevs man.');
+}
+</code></pre>
+<p>If you want to <strong>put emphasis</strong> in certain things that's also <em>pretty simple</em>.</p>
+</content></entry><entry ><title >This is the beginning of a beautiful friendship</title><link href="https://antwarjs.github.io/a-beautiful-friendship"></link><content type="html"><p>This is the first post on the Antwar blog. The first post served by Antwar. I hope there will be many more. I hope that there are more people out there that want a simple and friendly blogging tool. Because that's what we are trying to build.</p>
+<p>The project started out as a fork of Brad Denver's experiment <a href="http://braddenver.com/blog/2015/react-static-site.html">react-static-site</a>. We have come quite a long way already and we want to keep improving Antwar.</p>
+<p>We would be happy if you wanted to try Antwar and give some feedback.</p>
+</content></entry></feed>
