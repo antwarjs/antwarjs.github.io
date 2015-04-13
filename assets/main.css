@@ -1114,6 +1114,9 @@ main {
   list-style: none; }
   .post-list li:before {
     content: ''; }
+  @media only screen and (max-width: 654px) {
+    .post-list li {
+      margin-left: 0; } }
 
 .post-list__heading {
   margin: 0; }
