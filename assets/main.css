@@ -1,6 +1,6 @@
 /*
 
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
 
@@ -8,147 +8,118 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #f0f0f0;
+  color: #333;
+  background: #f8f8f8;
   -webkit-text-size-adjust: none;
 }
 
-.hljs,
-.hljs-subst,
-.hljs-tag .hljs-title,
-.nginx .hljs-title {
-  color: black;
-}
-
-.hljs-string,
-.hljs-title,
-.hljs-constant,
-.hljs-parent,
-.hljs-tag .hljs-value,
-.hljs-rules .hljs-value,
-.hljs-preprocessor,
-.hljs-pragma,
-.haml .hljs-symbol,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.hljs-template_tag,
-.django .hljs-variable,
-.smalltalk .hljs-class,
-.hljs-addition,
-.hljs-flow,
-.hljs-stream,
-.bash .hljs-variable,
-.apache .hljs-tag,
-.apache .hljs-cbracket,
-.tex .hljs-command,
-.tex .hljs-special,
-.erlang_repl .hljs-function_or_atom,
-.asciidoc .hljs-header,
-.markdown .hljs-header,
-.coffeescript .hljs-attribute {
-  color: #800;
-}
-
-.smartquote,
 .hljs-comment,
-.hljs-annotation,
-.diff .hljs-header,
-.hljs-chunk,
-.asciidoc .hljs-blockquote,
-.markdown .hljs-blockquote {
-  color: #888;
-}
-
-.hljs-number,
-.hljs-date,
-.hljs-regexp,
-.hljs-literal,
-.hljs-hexcolor,
-.smalltalk .hljs-symbol,
-.smalltalk .hljs-char,
-.go .hljs-constant,
-.hljs-change,
-.lasso .hljs-variable,
-.makefile .hljs-variable,
-.asciidoc .hljs-bullet,
-.markdown .hljs-bullet,
-.asciidoc .hljs-link_url,
-.markdown .hljs-link_url {
-  color: #080;
-}
-
-.hljs-label,
-.hljs-javadoc,
-.ruby .hljs-string,
-.hljs-decorator,
-.hljs-filter .hljs-argument,
-.hljs-localvars,
-.hljs-array,
-.hljs-attr_selector,
-.hljs-important,
-.hljs-pseudo,
-.hljs-pi,
-.haml .hljs-bullet,
-.hljs-doctype,
-.hljs-deletion,
-.hljs-envvar,
-.hljs-shebang,
-.apache .hljs-sqbracket,
-.nginx .hljs-built_in,
-.tex .hljs-formula,
-.erlang_repl .hljs-reserved,
-.hljs-prompt,
-.asciidoc .hljs-link_label,
-.markdown .hljs-link_label,
-.vhdl .hljs-attribute,
-.clojure .hljs-attribute,
-.asciidoc .hljs-attribute,
-.lasso .hljs-attribute,
-.coffeescript .hljs-property,
-.hljs-phony {
-  color: #88f;
-}
-
-.hljs-keyword,
-.hljs-id,
-.hljs-title,
-.hljs-built_in,
-.css .hljs-tag,
-.hljs-javadoctag,
-.hljs-phpdoc,
-.hljs-dartdoc,
-.hljs-yardoctag,
-.smalltalk .hljs-class,
-.hljs-winutils,
-.bash .hljs-variable,
-.apache .hljs-tag,
-.hljs-type,
-.hljs-typename,
-.tex .hljs-command,
-.asciidoc .hljs-strong,
-.markdown .hljs-strong,
-.hljs-request,
-.hljs-status {
-  font-weight: bold;
-}
-
-.asciidoc .hljs-emphasis,
-.markdown .hljs-emphasis {
+.diff .hljs-header {
+  color: #998;
   font-style: italic;
 }
 
-.nginx .hljs-built_in {
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-list .hljs-keyword,
+.hljs-subst {
   font-weight: normal;
 }
 
-.coffeescript .javascript,
-.javascript .xml,
-.lasso .markup,
-.tex .hljs-formula,
-.xml .javascript,
-.xml .vbscript,
-.xml .css,
-.xml .hljs-cdata {
-  opacity: 0.5;
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rule .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.hljs-name {
+  color: #008080;
+}
+
+.hljs-regexp {
+  color: #009926;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073;
+}
+
+.hljs-built_in {
+  color: #0086b3;
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.diff .hljs-change {
+  background: #0086b3;
+}
+
+.hljs-chunk {
+  color: #aaa;
 }
 @charset "UTF-8";
 /* Where does the horizontal grid start? */
@@ -664,7 +635,7 @@ body, button, input {
   color: #fff; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
   color: #222;
   margin-bottom: 0;
   font-weight: 600;
@@ -678,14 +649,15 @@ h1 {
   font-size: 29.85984px;
   font-size: 1.65888rem;
   line-height: 1.80845;
-  font-weight: 800;
+  font-weight: 700;
   margin-top: 54px;
   text-transform: uppercase; }
 
 h2 {
   font-size: 24.8832px;
   font-size: 1.3824rem;
-  line-height: 1.08507; }
+  line-height: 1.08507;
+  font-weight: 700; }
 
 h3 {
   font-size: 20.736px;
@@ -713,9 +685,9 @@ pre, code {
   background-color: #eee;
   border-radius: 7px;
   padding: 6.75px;
-  font-size: 15px;
-  font-size: 0.83333rem;
-  line-height: 1.8; }
+  font-size: 13px;
+  font-size: 0.72222rem;
+  line-height: 2.07692; }
 
 pre {
   margin-bottom: 27px; }
@@ -745,20 +717,20 @@ blockquote {
   line-height: 1.30208;
   line-height: 40.5px; }
 
-.centi, .prevnext {
-  font-family: "Source Sans Pro", "Avenir Next", "Helvetica Neue", sans-serif;
+.centi {
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.72222rem;
   line-height: 2.07692; }
 
 .small, .milli {
-  font-family: "Source Sans Pro", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
   font-size: 11px;
   font-size: 0.61111rem;
   line-height: 2.45455; }
 
 .micro, .tiny {
-  font-family: "Source Sans Pro", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
   font-size: 10px;
   font-size: 0.55556rem;
   line-height: 2.7; }
@@ -782,7 +754,7 @@ blockquote {
   text-align: right; }
 
 time, .post__author {
-  font-family: "Source Sans Pro", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
   color: #999;
   font-size: 15px;
   font-size: 0.83333rem;
@@ -792,7 +764,7 @@ body {
   background-color: #fff; }
 
 .grid {
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
   padding: 0 27px;
   -webkit-align-self: center;
@@ -816,7 +788,7 @@ ul {
 
 li {
   margin-bottom: 27px; }
-  @media only screen and (max-width: 654px) {
+  @media only screen and (max-width: 754px) {
     li {
       margin-left: 1em; } }
 
@@ -849,7 +821,7 @@ div, section, article, main, nav {
           align-content: center; }
 
 main {
-  overflow-x: hidden; }
+  width: 100%; }
 
 .main-content {
   -webkit-box-align: center;
@@ -873,7 +845,8 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  pointer-events: none; }
+  pointer-events: none;
+  z-index: 100; }
   @media only screen and (max-width: 549px) {
     .nav__wrapper {
       bottom: auto;
@@ -934,7 +907,7 @@ main {
   letter-spacing: 4px;
   font-weight: 600;
   pointer-events: all;
-  font-family: "Source Sans Pro", sans-serif; }
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif; }
 
 .nav__link {
   display: inline-block;
@@ -1005,11 +978,89 @@ main {
     .nav__toggle-label {
       display: block; } }
 
+.docs-nav__wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: auto;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; }
+  @media only screen and (min-width: 1150px) {
+    .docs-nav__wrapper {
+      padding: 27px;
+      position: fixed;
+      left: 0;
+      top: 13.5px; } }
+
+.docs-nav {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  @media only screen and (min-width: 1150px) {
+    .docs-nav {
+      max-width: 225px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin-top: 27px; } }
+  @media only screen and (max-width: 550px) {
+    .docs-nav {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.docs-nav--header {
+  margin-bottom: 13.5px; }
+
+.docs-nav__link {
+  font-size: 15px;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  margin-right: 27px; }
+
 .btn {
-  font-family: "Source Sans Pro", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: 800;
+  font-weight: 700;
   -webkit-appearance: none;
   -webkit-appearance: normal;
   outline: none;
@@ -1038,7 +1089,7 @@ main {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-  width: 600px;
+  width: 700px;
   max-width: 100vw;
   padding: 0 27px;
   margin-bottom: 81px; }
@@ -1050,13 +1101,13 @@ main {
       padding: 0 13.5px; } }
 
 .post__content h1, .post__content h2, .post__content h3, .post__content h4, .post__content h5, .post__content h6, .post__content p, .post__content ol, .post__content ul, .post__content pre {
-  width: 546px;
+  width: 646px;
   max-width: calc(100vw - 27px); }
 .post__content img {
   width: 90vw;
   position: relative;
   left: calc(-45vw + 50%); }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     .post__content img {
       width: 100vw;
       left: calc(-50vw + 50%); } }
@@ -1070,6 +1121,9 @@ main {
     font-size: 16px;
     font-size: 0.88889rem;
     line-height: 1.6875; } }
+.post__content .inline-img {
+  width: 100%;
+  left: auto; }
 
 .header-image {
   width: 100vw;
@@ -1080,7 +1134,7 @@ main {
   background-color: #434343;
   background-size: cover;
   background-position: 50% 50%;
-  z-index: 10;
+  z-index: 300;
   -webkit-filter: brightness(0.4);
           filter: brightness(0.4);
   -webkit-backface-visibility: hidden;
@@ -1096,7 +1150,7 @@ main {
   color: #fff;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  z-index: 15;
+  z-index: 400;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
   .header-image + .post__heading > h1, .header-image + .post__heading > h3 {
@@ -1114,7 +1168,7 @@ main {
   list-style: none; }
   .post-list li:before {
     content: ''; }
-  @media only screen and (max-width: 654px) {
+  @media only screen and (max-width: 754px) {
     .post-list li {
       margin-left: 0; } }
 
@@ -1125,7 +1179,7 @@ main {
   margin-bottom: 54px; }
 
 .draft-text {
-  font-family: "Source Sans Pro", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
   color: #c40000;
   font-size: 13px;
   font-size: 0.72222rem;
@@ -1145,21 +1199,84 @@ main {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 54px 0; }
+  margin: 54px 0 0;
+  width: 100vw;
+  left: 0;
+  position: absolute;
+  z-index: 200; }
+  @media only screen and (max-width: 549px) {
+    .prevnext {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  @media only screen and (max-width: palm) {
+    .prevnext {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
 
 .prevnext__next, .prevnext__prev {
+  position: relative;
+  width: 50vw;
+  color: #fff;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  padding: 27px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
-
-.prevnext__next {
+          flex-direction: column;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 324px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
-          flex-grow: 1;
-  text-align: right; }
+          flex-grow: 1; }
+  @media only screen and (max-width: 549px) {
+    .prevnext__next, .prevnext__prev {
+      width: 100vw; } }
+  @media only screen and (max-width: palm) {
+    .prevnext__next, .prevnext__prev {
+      width: 100vw; } }
+
+.prevnext__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #434343;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 0;
+  -webkit-filter: brightness(0.4);
+          filter: brightness(0.4); }
+
+.prevnext__info {
+  font-size: 13px;
+  font-size: 0.72222rem;
+  line-height: 2.07692;
+  z-index: 1; }
+
+.prevnext__link {
+  color: #fff;
+  font-weight: 700;
+  z-index: 1; }
 
 .front__buttons {
   display: -webkit-box;

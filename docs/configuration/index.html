@@ -1,0 +1,219 @@
+<html><head><title>Configuration / Antwar</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"><link rel="icon" type="image/png" href="../../assets/img/favicon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" href="../../assets/main.css"></head><body><div><div class="nav__wrapper"><input type="checkbox" class="nav__toggle" id="nav__toggle"><label class="nav__toggle-label" for="nav__toggle"></label><nav class="nav"><div class="nav__link"><a href="../../">Home</a></div><div class="nav__link"><a href="../../docs">Documentation</a></div><div class="nav__link"><a href="../../blog">Blog</a></div></nav></div><main role="main"><div class="post"><div class="docs-nav__wrapper"><h4 class="docs-nav--header">Documentation</h4><div class="docs-nav"><a href="/docs/getting-started" class="docs-nav__link">Getting started</a><a href="/docs/deploying-to-github-pages" class="docs-nav__link">Deploying to GitHub Pages</a><span class="docs-nav__link docs-nav__link--current">Configuration</span><a href="/docs/plugins" class="docs-nav__link">Plugins</a><a href="/docs/themes" class="docs-nav__link">Theming</a></div></div><h1 class="post__heading">Configuration</h1><div class="post__content"><div><p>Just like <a href="https://webpack.github.io/">Webpack</a>, the heart of Antwar, also Antwar has been built on the configuration. <code>antwar.config.js</code> describes all metadata related to your site. This includes basic information such as site title, author, sections and so on. It also defines which theme and which plugins you use.</p>
+<h2 id="basic-example">Basic Example</h2>
+<p>This is (more or less) the configuration for this site. If you are used to working with javascript, most of this should look familiar.</p>
+<pre><code class="lang-javascript">&apos;use strict&apos;;
+
+var rssPlugin = require(&apos;antwar-rss-plugin&apos;);
+var prevnextPlugin = require(&apos;antwar-prevnext-plugin&apos;);
+var highlightPlugin = require(&apos;antwar-highlight-plugin&apos;);
+
+module.exports = {
+
+  // Folder name for the output
+  output: &apos;build&apos;,
+
+  // Name of the site
+  name: &apos;Antwar&apos;,
+
+  // Name of the author
+  author: &apos;Antwar&apos;,
+
+  // Branch to deploy to.
+  deploy: {
+    branch: &apos;gh-pages&apos;,
+  },
+
+  plugins: [
+    rssPlugin(),
+    prevnextPlugin(),
+    highlightPlugin({
+      style: function() {
+        require(&apos;highlight.js/styles/github.css&apos;);
+      },
+      languages: [&apos;javascript&apos;],
+    })
+  ],
+
+  // Definitions for where the content is located
+  paths: {
+    &apos;/&apos;: {
+      path: function() {
+        return require.context(&apos;./pages&apos;);
+      }
+    },
+    blog: {
+      path: function() {
+        return require.context(&apos;./posts&apos;, true, /^\.\/.*\.md$/);
+      },
+      draft: function() {
+        return require.context(&apos;./drafts&apos;, true, /^\.\/.*\.md$/);
+      },
+      layout: &apos;blog&apos;,
+      title: &apos;Blog posts&apos;,
+    },
+    docs: {
+      path: function() {
+        return require.context(&apos;./docs&apos;, true, /^\.\/.*\.md$/);
+      },
+      sort: function (items) {
+        return _.sortBy(items, function (item) {return item.file.sort});
+      },
+      processItem: {
+        isDraft: function(o) {
+          return o.file.isDraft;
+        },
+      },
+      layout: &apos;docs&apos;,
+      title: &apos;Documentation&apos;,
+    }
+  },
+
+  // Theme and config for the theme
+  theme: {
+    name: &apos;antwar-default-theme&apos;,
+    navigation: [
+      {title: &apos;Home&apos;, url: &apos;/&apos;},
+      {title: &apos;Documentation&apos;, url: &apos;/docs&apos;},
+      {title: &apos;Blog&apos;, url: &apos;/blog&apos;}
+    ],
+    analyticsId: &apos;UA-XXXXXXXXX-1&apos;,
+    customStyles: &apos;specific.scss&apos;,
+  }
+};
+</code></pre>
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+<p>The configuration is available at page level so you can use it in quite imaginative manners.</p>
+<p>To give you a better idea of how to approach configuration consider the real life example below. It has been taken from <a href="http://survivejs.com/">SurviveJS</a> site and is actually quite advanced example. You don&apos;t need anything this complex for a casual blog. The default settings will get you quite far with that.</p>
+<pre><code class="lang-javascript">&apos;use strict&apos;;
+var _ = require(&apos;lodash&apos;);
+var removeMd = require(&apos;remove-markdown&apos;);
+var markdown = require(&apos;commonmark&apos;);
+var highlightPlugin = require(&apos;antwar-highlight-plugin&apos;);
+var prevnextPlugin = require(&apos;antwar-prevnext-plugin&apos;);
+
+var mdReader = new markdown.Parser();
+var mdWriter = new markdown.HtmlRenderer();
+
+module.exports = {
+  // copying files so I can refer to them easily from content
+  assets: [
+    {
+      from: &apos;manuscript/images&apos;,
+      to: &apos;images&apos;,
+    },
+    {
+      from: &apos;./CNAME&apos;,
+      to: &apos;./&apos;,
+    }
+  ],
+  // setting up general meta for output and such
+  output: &apos;build&apos;,
+  name: &apos;SurviveJS - Survive the jungles of JavaScript&apos;,
+  author: &apos;Juho Veps&#xE4;l&#xE4;inen&apos;,
+  deploy: {
+    branch: &apos;gh-pages&apos;,
+  },
+  // global plugins for whole site
+  plugins: [
+    highlightPlugin({
+      style: function() {
+        require(&apos;highlight.js/styles/github.css&apos;);
+      },
+      languages: [&apos;bash&apos;, &apos;javascript&apos;, &apos;json&apos;, &apos;html&apos;],
+    }),
+    prevnextPlugin({
+      bodyContent: prevnextPlugin.bodyContent({
+        previous: function(o) {
+          return o.title;
+        },
+        previousUrl: function(o) {
+          return &apos;../&apos; + o.split(&apos;/&apos;).slice(1).join(&apos;/&apos;);
+        },
+        next: function(o) {
+          return o.title;
+        },
+        nextUrl: function(o) {
+          return &apos;../&apos; + o.split(&apos;/&apos;).slice(1).join(&apos;/&apos;);
+        },
+      })
+    }),
+  ],
+  // choosing a theme and setting some theme specific settings
+  theme: {
+    customStyles: &apos;custom.scss&apos;,
+    name: &apos;antwar-default-theme&apos;,
+    navigation: [
+      {title: &apos;Home&apos;, url: &apos;/&apos;},
+      {title: &apos;Table of Contents&apos;, url: &apos;/webpack_react&apos;},
+    ],
+  },
+  // describing site structure and content mapping
+  paths: {
+    &apos;/&apos;: {
+      path: function() {
+        // require.context is a feature of Webpack. It just loads
+        // the content of given directory so we can process it
+        return require.context(&apos;./pages&apos;);
+      },
+    },
+    // mapping an ebook (directory of Markdown files) to a section
+    webpack_react: {
+      title: &apos;Table of Contents&apos;,
+      path: function() {
+        // here we want just Markdown files. In order to be future proof
+        // I get the files recursively (second parameter). This would
+        // just generate a deeper structure.
+        return require.context(&apos;./manuscript&apos;, true, /^\.\/.*\.md$/);
+      },
+      processItem: {
+        title: function(o) {
+          // picking title from first line (Markdown stripped)
+          return removeMd(o.file.__content.split(&apos;\n&apos;)[0]);
+        },
+        content: function(o) {
+          // picking everything except the first line (title, remember)
+          var content = o.file.__content.split(&apos;\n&apos;).slice(1).join(&apos;\n&apos;);
+
+          // rendering to html
+          return mdWriter.render(mdReader.parse(content));
+        },
+        preview: function(o) {
+          // picking a limited amount of content to show for preview
+          var previewLimit = 150;
+          var content = o.file.__content.split(&apos;\n&apos;).slice(1).join(&apos;\n&apos;);
+          var stripped = removeMd(content);
+
+          if(stripped.length &gt; previewLimit) {
+            return stripped.substr(0, previewLimit) + &apos;&#x2026;&apos;;
+          }
+
+          return stripped;
+        },
+      },
+      sort: function(files) {
+        // sorting section index based on an order defined at a separate file
+        var order = require(&apos;raw!./manuscript/Book.txt&apos;).split(&apos;\n&apos;).filter(id);
+        var ret = [];
+
+        order.forEach(function(name) {
+          var result = _.findWhere(files, {
+            name: name,
+          });
+
+          if(result) {
+            ret.push(result);
+          }
+        });
+
+        return ret;
+      },
+    }
+  }
+};
+
+function id(a) {return a;}
+</code></pre>
+<p>In practice your configuration will likely look very different compared to this example. As you can see, Antwar allows you to shape a section mapping quite freely. The system leverages Webpack heavily.</p>
+<p>In addition you may use whatever tricks you have as long as they work in frontend environment. This means you won&apos;t have direct access to Node modules such as <code>fs</code> but in practice this isn&apos;t a problem as Webpack can help you as above.</p>
+<p>Each of those <code>processItem</code> hooks accepts an object as a parameter. Through it you can access <code>file</code> (Webpack context object), <code>fileName</code> (string) and <code>sectionName</code> (string) data.</p>
+</div></div></div><noscript></noscript></main><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-60511795-1', 'auto');ga('send', 'pageview');</script></div></body></html>
