@@ -1318,6 +1318,14 @@ main {
         margin-left: 0;
         margin-right: 0; } }
 
+.front__latestpost {
+  margin-top: 27px;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  color: #fff; }
+  .front__latestpost:hover {
+    color: #cff9fd; }
+
 .vertical-margin {
   margin-top: 27px;
   margin-bottom: 27px; }
