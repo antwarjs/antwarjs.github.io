@@ -862,15 +862,15 @@ main {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  background: -webkit-linear-gradient(bottom, #fff, rgba(255, 255, 255, 0));
-  background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+  background: -webkit-linear-gradient(bottom, #fff 0%, #fff 35%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to top, #fff 0%, #fff 35%, rgba(255, 255, 255, 0) 100%);
   z-index: 5;
   width: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 27px;
+  padding-top: 54px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
   @media only screen and (max-width: 549px) {
@@ -911,7 +911,7 @@ main {
 
 .nav__link {
   display: inline-block;
-  padding: 13.5px 27px;
+  padding: 6.75px 27px;
   -webkit-transition: color cubic-bezier(.23, 1, .32, 1) 0.3s;
           transition: color cubic-bezier(.23, 1, .32, 1) 0.3s;
   font-size: 15px;
