@@ -1039,7 +1039,7 @@ main {
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
-      margin-top: 27px; } }
+      margin-top: 13.5px; } }
   @media only screen and (max-width: 550px) {
     .docs-nav {
       -webkit-box-orient: vertical;
@@ -1049,12 +1049,24 @@ main {
               flex-direction: column; } }
 
 .docs-nav--header {
-  margin-bottom: 13.5px; }
+  margin-bottom: 0; }
 
 .docs-nav__link {
   font-size: 15px;
   font-family: "Avenir Next", "Helvetica Neue", sans-serif;
-  margin-right: 27px; }
+  margin-right: 27px;
+  margin-bottom: 0.3em;
+  line-height: 1.5; }
+
+.docs-nav__wrapper--push-down {
+  margin-top: 100vh; }
+  .docs-nav__wrapper--push-down + .header-image + .post__heading + .post__content {
+    margin-top: 0; }
+  @media only screen and (min-width: 1150px) {
+    .docs-nav__wrapper--push-down {
+      position: absolute; }
+      .docs-nav__wrapper--push-down + .header-image + .post__heading + .post__content {
+        margin-top: 100vh; } }
 
 .btn {
   font-family: "Avenir Next", "Helvetica Neue", sans-serif;

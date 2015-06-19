@@ -1,4 +1,4 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title >Antwar</title><link href="undefinedatom.xml" rel="self"> </link><link href="undefined"> </link><updated >2015-06-15T16:01:09+03:00</updated><id >undefined</id><author ><name >Antwar</name><email >undefined</email></author><entry ><title >Antwar 0.5.0 - Halfway Towards Awesomeness</title><id >aantwar050halfwaytowardsawesomeness2015-06-04t00:00:00+03:00</id><link href="undefinedblog/antwar-050"></link><updated >2015-06-04T00:00:00+03:00</updated><content type="html">&lt;p&gt;Antwar is one of those projects that was born to fill a need. I wanted to port my &lt;a href=&quot;http://nixtu.info/&quot;&gt;Blogspot blog&lt;/a&gt; to some platform that&amp;apos;s more fun to work with. Initially I looked into &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. The fact that it&amp;apos;s not static was a big turn off. I wanted my blog over Git.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title >Antwar</title><link href="undefinedatom.xml" rel="self"> </link><link href="undefined"> </link><updated >2015-06-19T09:33:57+03:00</updated><id >undefined</id><author ><name >Antwar</name><email >undefined</email></author><entry ><title >Antwar 0.5.0 - Halfway Towards Awesomeness</title><id >aantwar050halfwaytowardsawesomeness2015-06-04t00:00:00+03:00</id><link href="undefinedblog/antwar-050"></link><updated >2015-06-04T00:00:00+03:00</updated><content type="html">&lt;p&gt;Antwar is one of those projects that was born to fill a need. I wanted to port my &lt;a href=&quot;http://nixtu.info/&quot;&gt;Blogspot blog&lt;/a&gt; to some platform that&amp;apos;s more fun to work with. Initially I looked into &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. The fact that it&amp;apos;s not static was a big turn off. I wanted my blog over Git.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;During my dabblings with Ghost I did write a migration path in form of &lt;a href=&quot;https://github.com/bebraw/blogger2ghost&quot;&gt;blogger2ghost&lt;/a&gt;, though. Eventually I came upon &lt;a href=&quot;https://github.com/antwarjs/antwar&quot;&gt;Antwar&lt;/a&gt; and here I am.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -158,27 +158,44 @@ cd &amp;lt;directory name&amp;gt;
 &lt;li&gt;&lt;p&gt;Add your content. When you&amp;apos;re ready, run  &lt;code&gt;antwar --build&lt;/code&gt; to generate the static files.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-</content></entry><entry ><title >Deploying to GitHub Pages</title><id >adeployingtogithubpagesinvalid date</id><link href="undefineddocs/deploying-to-github-pages"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;Antwar works very well with &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. Hosting your site there is simple. Follow the steps below:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;git init&lt;/code&gt; at your project directory&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git add *&lt;/code&gt;, &lt;code&gt;git add .gitignore&lt;/code&gt;, &lt;code&gt;git commit -am &amp;quot;Initial commit&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/create-a-repo/&quot;&gt;Create a repository at GitHub and push the repo there&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;antwar --build&lt;/code&gt; (or &lt;code&gt;-b&lt;/code&gt; for short)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;antwar --deploy&lt;/code&gt; (or &lt;code&gt;-D&lt;/code&gt; for short)&lt;/li&gt;
-&lt;li&gt;Surf to &lt;code&gt;&amp;lt;user&amp;gt;.github.io/&amp;lt;project&amp;gt;&lt;/code&gt; and you should see your site there&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;You can also preview the site locally by going to your &lt;code&gt;build&lt;/code&gt; directory and serving the content through a static server. &lt;code&gt;serve&lt;/code&gt; works well. Just hit &lt;code&gt;npm i serve -g&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt;. The site will be available through port 3000 by default.&lt;/p&gt;
-&lt;h2 id=&quot;automating-deployment&quot;&gt;Automating Deployment&lt;/h2&gt;
-&lt;p&gt;You can automate this procedure easily through Travis. See &lt;a href=&quot;https://gist.github.com/domenic/ec8b0fc8ab45f39403dd&quot;&gt;@domenic&amp;apos;s instructions&lt;/a&gt; for one way to achieve this. Adapt as needed.&lt;/p&gt;
-&lt;h2 id=&quot;setting-up-your-domain&quot;&gt;Setting Up Your Domain&lt;/h2&gt;
-&lt;p&gt;First of all you should &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;set up a CNAME file&lt;/a&gt; to project root. In addition you&amp;apos;ll need to make Antwar to include it with your build through configuration like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;assets: [
-  {
-    from: &amp;apos;./CNAME&amp;apos;,
-    to: &amp;apos;./&amp;apos;,
-  },
-  ...
-],
+</content></entry><entry ><title >FAQ</title><id >afaqinvalid date</id><link href="undefineddocs/faq"></link><updated >Invalid date</updated><content type="html">&lt;h2 id=&quot;does-antwar-support-hot-module-reloading-&quot;&gt;Does Antwar Support Hot Module Reloading?&lt;/h2&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+&lt;h2 id=&quot;how-to-process-section-item-dates-&quot;&gt;How to Process Section Item Dates?&lt;/h2&gt;
+&lt;p&gt;By default Antwar will parse date based on Markdown YAML Headmatter. If that&amp;apos;s not enough for you, you can customize the behavior as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;paths: {
+  blog: {
+    processItem: {
+      date: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-comment&quot;&gt;// parse date from filename for instance&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;Date&lt;/span&gt;(o.fileName.split(&amp;apos;-&amp;apos;).slice(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;).join(&amp;apos;.&amp;apos;));
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;how-can-i-create-drafts-&quot;&gt;How Can I Create Drafts?&lt;/h2&gt;
+&lt;p&gt;Antwar allows you to mark section items as drafts. This means they will be visible only during development mode and won&amp;apos;t be included in the production build. Drafting is useful if you want to set up some content and publish it at a later time.&lt;/p&gt;
+&lt;p&gt;By default Antwar detects drafts through &lt;code&gt;isDraft&lt;/code&gt; flag. You can set this at item metadata (ie. YAML headmatter or custom). Alternatively you can tell Antwar to look for drafts in a specific directory. This can be configured as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;paths: {
+  blog: {
+    draft: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+      &lt;span class=&quot;hljs-comment&quot;&gt;// search recursively for Markdown drafts&lt;/span&gt;
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&amp;apos;./drafts&amp;apos;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
+    },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this case publishing flow would be simple. You would just move drafts to directory set up in analogous &lt;code&gt;path&lt;/code&gt; configuration.&lt;/p&gt;
+&lt;h2 id=&quot;how-can-i-attach-custom-metadata-to-items-&quot;&gt;How Can I Attach Custom Metadata to Items?&lt;/h2&gt;
+&lt;p&gt;This can be achieved at &lt;code&gt;sort&lt;/code&gt; hook. In the following example I load custom order from an external file and then attach some metadata per each item.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;paths: {
+  blog: {
+    sort: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;files&lt;/span&gt;) &lt;/span&gt;{
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; files.map(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;file&lt;/span&gt;) &lt;/span&gt;{
+        file.headerImage = &amp;apos;&lt;span class=&quot;hljs-regexp&quot;&gt;/images/&lt;/span&gt;demo.jpg&amp;apos;;
+
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; file;
+      });
+    },
+}
 &lt;/code&gt;&lt;/pre&gt;
 </content></entry><entry ><title >Configuration</title><id >aconfigurationinvalid date</id><link href="undefineddocs/configuration"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;Just like &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt;, the heart of Antwar, also Antwar has been built on the configuration. &lt;code&gt;antwar.config.js&lt;/code&gt; describes all metadata related to your site. This includes basic information such as site title, author, sections and so on. It also defines which theme and which plugins you use.&lt;/p&gt;
 &lt;h2 id=&quot;basic-example&quot;&gt;Basic Example&lt;/h2&gt;
@@ -398,6 +415,28 @@ function id(a) {return a;}
 &lt;p&gt;In practice your configuration will likely look very different compared to this example. As you can see, Antwar allows you to shape a section mapping quite freely. The system leverages Webpack heavily.&lt;/p&gt;
 &lt;p&gt;In addition you may use whatever tricks you have as long as they work in frontend environment. This means you won&amp;apos;t have direct access to Node modules such as &lt;code&gt;fs&lt;/code&gt; but in practice this isn&amp;apos;t a problem as Webpack can help you as above.&lt;/p&gt;
 &lt;p&gt;Each of those &lt;code&gt;processItem&lt;/code&gt; hooks accepts an object as a parameter. Through it you can access &lt;code&gt;file&lt;/code&gt; (Webpack context object), &lt;code&gt;fileName&lt;/code&gt; (string) and &lt;code&gt;sectionName&lt;/code&gt; (string) data.&lt;/p&gt;
+</content></entry><entry ><title >Deploying to GitHub Pages</title><id >adeployingtogithubpagesinvalid date</id><link href="undefineddocs/deploying-to-github-pages"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;Antwar works very well with &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. Hosting your site there is simple. Follow the steps below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt; at your project directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add *&lt;/code&gt;, &lt;code&gt;git add .gitignore&lt;/code&gt;, &lt;code&gt;git commit -am &amp;quot;Initial commit&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/create-a-repo/&quot;&gt;Create a repository at GitHub and push the repo there&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;antwar --build&lt;/code&gt; (or &lt;code&gt;-b&lt;/code&gt; for short)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;antwar --deploy&lt;/code&gt; (or &lt;code&gt;-D&lt;/code&gt; for short)&lt;/li&gt;
+&lt;li&gt;Surf to &lt;code&gt;&amp;lt;user&amp;gt;.github.io/&amp;lt;project&amp;gt;&lt;/code&gt; and you should see your site there&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can also preview the site locally by going to your &lt;code&gt;build&lt;/code&gt; directory and serving the content through a static server. &lt;code&gt;serve&lt;/code&gt; works well. Just hit &lt;code&gt;npm i serve -g&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt;. The site will be available through port 3000 by default.&lt;/p&gt;
+&lt;h2 id=&quot;automating-deployment&quot;&gt;Automating Deployment&lt;/h2&gt;
+&lt;p&gt;You can automate this procedure easily through Travis. See &lt;a href=&quot;https://gist.github.com/domenic/ec8b0fc8ab45f39403dd&quot;&gt;@domenic&amp;apos;s instructions&lt;/a&gt; for one way to achieve this. Adapt as needed.&lt;/p&gt;
+&lt;h2 id=&quot;setting-up-your-domain&quot;&gt;Setting Up Your Domain&lt;/h2&gt;
+&lt;p&gt;First of all you should &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;set up a CNAME file&lt;/a&gt; to project root. In addition you&amp;apos;ll need to make Antwar to include it with your build through configuration like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;assets: [
+  {
+    from: &amp;apos;./CNAME&amp;apos;,
+    to: &amp;apos;./&amp;apos;,
+  },
+  ...
+],
+&lt;/code&gt;&lt;/pre&gt;
 </content></entry><entry ><title >Theming</title><id >atheminginvalid date</id><link href="undefineddocs/themes"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;The building blocks of Antwar themes are React components. They serve as templates for the pages on your site. The &lt;a href=&quot;https://github.com/antwarjs/default-theme&quot;&gt;default Antwar theme&lt;/a&gt; is a good place to look for inspiration.&lt;/p&gt;
 &lt;p&gt;There are a few required file in an Antwar theme. Antwar handles js, jsx and coffeescript files.&lt;/p&gt;
 &lt;h2 id=&quot;required-files&quot;&gt;Required Files&lt;/h2&gt;
