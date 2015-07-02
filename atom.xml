@@ -1,4 +1,4 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title >Antwar</title><link href="undefinedatom.xml" rel="self"> </link><link href="undefined"> </link><updated >2015-06-19T09:33:57+03:00</updated><id >undefined</id><author ><name >Antwar</name><email >undefined</email></author><entry ><title >Antwar 0.5.0 - Halfway Towards Awesomeness</title><id >aantwar050halfwaytowardsawesomeness2015-06-04t00:00:00+03:00</id><link href="undefinedblog/antwar-050"></link><updated >2015-06-04T00:00:00+03:00</updated><content type="html">&lt;p&gt;Antwar is one of those projects that was born to fill a need. I wanted to port my &lt;a href=&quot;http://nixtu.info/&quot;&gt;Blogspot blog&lt;/a&gt; to some platform that&amp;apos;s more fun to work with. Initially I looked into &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. The fact that it&amp;apos;s not static was a big turn off. I wanted my blog over Git.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title >Antwar</title><link href="undefinedatom.xml" rel="self"> </link><link href="undefined"> </link><updated >2015-07-02T13:58:56+03:00</updated><id >undefined</id><author ><name >Antwar</name><email >undefined</email></author><entry ><title >Antwar 0.5.0 - Halfway Towards Awesomeness</title><id >aantwar050halfwaytowardsawesomeness2015-06-04t00:00:00+03:00</id><link href="undefinedblog/antwar-050"></link><updated >2015-06-04T00:00:00+03:00</updated><content type="html">&lt;p&gt;Antwar is one of those projects that was born to fill a need. I wanted to port my &lt;a href=&quot;http://nixtu.info/&quot;&gt;Blogspot blog&lt;/a&gt; to some platform that&amp;apos;s more fun to work with. Initially I looked into &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. The fact that it&amp;apos;s not static was a big turn off. I wanted my blog over Git.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;During my dabblings with Ghost I did write a migration path in form of &lt;a href=&quot;https://github.com/bebraw/blogger2ghost&quot;&gt;blogger2ghost&lt;/a&gt;, though. Eventually I came upon &lt;a href=&quot;https://github.com/antwarjs/antwar&quot;&gt;Antwar&lt;/a&gt; and here I am.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -20,12 +20,12 @@
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
   assets: [
     {
-      from: &amp;apos;manuscript/images&amp;apos;,
-      to: &amp;apos;images&amp;apos;,
+      from: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;manuscript/images&amp;apos;&lt;/span&gt;,
+      to: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;images&amp;apos;&lt;/span&gt;,
     },
     {
-      from: &amp;apos;./CNAME&amp;apos;,
-      to: &amp;apos;./&amp;apos;,
+      from: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./CNAME&amp;apos;&lt;/span&gt;,
+      to: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./&amp;apos;&lt;/span&gt;,
     }
   ],
   ...
@@ -34,16 +34,16 @@
 &lt;h3 id=&quot;plugins&quot;&gt;Plugins&lt;/h3&gt;
 &lt;p&gt;We decided to standardize on plugin format. Now each plugin should return a function which takes possible options. In this case I&amp;apos;m setting up highlighting and previous/next links for all sections of the site. Later on we intend to allow more specific configuration per site section.&lt;/p&gt;
 &lt;p&gt;Plugins can inject new metadata and even markup to pages making this a powerful extension mechanism. Besides highlight and prevnext we have set up RSS plugin and there are plans for a few others including various commenting plugins.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; highlightPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&amp;apos;antwar-highlight-plugin&amp;apos;);
-&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; prevnextPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&amp;apos;antwar-prevnext-plugin&amp;apos;);
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; highlightPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-highlight-plugin&amp;apos;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; prevnextPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-prevnext-plugin&amp;apos;&lt;/span&gt;);
 
 &lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
   plugins: [
     highlightPlugin({
       style: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&amp;apos;highlight.js/styles/github.css&amp;apos;);
+        &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;highlight.js/styles/github.css&amp;apos;&lt;/span&gt;);
       },
-      languages: [&amp;apos;bash&amp;apos;, &amp;apos;javascript&amp;apos;, &amp;apos;json&amp;apos;, &amp;apos;html&amp;apos;],
+      languages: [&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;bash&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;javascript&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;json&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;html&amp;apos;&lt;/span&gt;],
     }),
     prevnextPlugin({
       ...
@@ -54,18 +54,18 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;theming&quot;&gt;Theming&lt;/h3&gt;
 &lt;p&gt;In this iteration we didn&amp;apos;t spend much thought on theming. Themes gained some minor addition but I consider this portion of Antwar underdeveloped. We have a nice looking default theme thanks to Andreas but I feel there&amp;apos;s room for improvement here. For completeness sake consider the example below:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;module.exports = {
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
   theme: {
-    customStyles: &amp;apos;custom.scss&amp;apos;,
-    name: &amp;apos;antwar-default-theme&amp;apos;,
+    customStyles: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;custom.scss&amp;apos;&lt;/span&gt;,
+    name: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-default-theme&amp;apos;&lt;/span&gt;,
     navigation: [
       {
-        title: &amp;apos;Home&amp;apos;,
-        url: &amp;apos;/&amp;apos;
+        title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Home&amp;apos;&lt;/span&gt;,
+        url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;
       },
       {
-        title: &amp;apos;Table of Contents&amp;apos;,
-        url: &amp;apos;/webpack_react&amp;apos;
+        title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Table of Contents&amp;apos;&lt;/span&gt;,
+        url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/webpack_react&amp;apos;&lt;/span&gt;
       },
     ],
   },
@@ -75,38 +75,38 @@
 &lt;p&gt;I think we&amp;apos;ll push navigation to a plugin eventually. Now it just renders a navigation like that for each page. This is handy but not as good as it can be.&lt;/p&gt;
 &lt;h3 id=&quot;paths&quot;&gt;Paths&lt;/h3&gt;
 &lt;p&gt;The greatest innovation of Antwar 0.5.0 is the path configuration. Paths allow you to map content to your site. We let Webpack do the heavy lifting for us as you can see below. The system allows you to perform heavy transformations over data, sort it and so on.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;module.exports = {
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
   paths: {
-    &amp;apos;/&amp;apos;: {
-      path: function() {
-        return require.context(&amp;apos;./pages&amp;apos;);
+    &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;: {
+      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./pages&amp;apos;&lt;/span&gt;);
       },
     },
     webpack_react: {
-      title: &amp;apos;Table of Contents&amp;apos;,
-      path: function() {
-        return require.context(&amp;apos;./manuscript&amp;apos;, true, /^\.\/.*\.md$/);
+      title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Table of Contents&amp;apos;&lt;/span&gt;,
+      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./manuscript&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
       },
       processItem: {
-        title: function(o) {
-          return removeMd(o.file.__content.split(&amp;apos;\n&amp;apos;)[0]);
+        title: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; removeMd(o.file.__content.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;)[&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;]);
         },
-        content: function(o) {
-          var content = o.file.__content.split(&amp;apos;\n&amp;apos;).slice(1).join(&amp;apos;\n&amp;apos;);
+        content: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; content = o.file.__content.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;).slice(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;).join(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;);
 
-          return mdWriter.render(mdReader.parse(content));
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; mdWriter.render(mdReader.parse(content));
         },
-        preview: function(o) {
+        preview: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
           ...
         },
       },
-      sort: function(files) {
-        var order = require(&amp;apos;raw!./manuscript/Book.txt&amp;apos;).split(&amp;apos;\n&amp;apos;).filter(id);
-        var ret = [];
+      sort: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;files&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; order = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;raw!./manuscript/Book.txt&amp;apos;&lt;/span&gt;).split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;).filter(id);
+        &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; ret = [];
 
         ...
 
-        return ret;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; ret;
       },
     }
   }
@@ -133,10 +133,10 @@
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;&gt;Links&lt;/a&gt; can take you to wonderful places.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Code can be written inline like this.&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(youWant) {
-  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&amp;apos;You can write code &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; blocks.&amp;apos;);
+  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;You can write code in blocks.&amp;apos;&lt;/span&gt;);
 }
 &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
-  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&amp;apos;Whatevs man.&amp;apos;);
+  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Whatevs man.&amp;apos;&lt;/span&gt;);
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to &lt;strong&gt;put emphasis&lt;/strong&gt; in certain things that&amp;apos;s also &lt;em&gt;pretty simple&lt;/em&gt;.&lt;/p&gt;
@@ -167,7 +167,7 @@ cd &amp;lt;directory name&amp;gt;
     processItem: {
       date: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
         &lt;span class=&quot;hljs-comment&quot;&gt;// parse date from filename for instance&lt;/span&gt;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;Date&lt;/span&gt;(o.fileName.split(&amp;apos;-&amp;apos;).slice(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;).join(&amp;apos;.&amp;apos;));
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;Date&lt;/span&gt;(o.fileName.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;-&amp;apos;&lt;/span&gt;).slice(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;).join(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;.&amp;apos;&lt;/span&gt;));
       }
     }
   }
@@ -180,7 +180,7 @@ cd &amp;lt;directory name&amp;gt;
   blog: {
     draft: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
       &lt;span class=&quot;hljs-comment&quot;&gt;// search recursively for Markdown drafts&lt;/span&gt;
-      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&amp;apos;./drafts&amp;apos;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./drafts&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
     },
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In this case publishing flow would be simple. You would just move drafts to directory set up in analogous &lt;code&gt;path&lt;/code&gt; configuration.&lt;/p&gt;
@@ -190,7 +190,7 @@ cd &amp;lt;directory name&amp;gt;
   blog: {
     sort: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;files&lt;/span&gt;) &lt;/span&gt;{
       &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; files.map(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;file&lt;/span&gt;) &lt;/span&gt;{
-        file.headerImage = &amp;apos;&lt;span class=&quot;hljs-regexp&quot;&gt;/images/&lt;/span&gt;demo.jpg&amp;apos;;
+        file.headerImage = &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/images/demo.jpg&amp;apos;&lt;/span&gt;;
 
         &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; file;
       });
@@ -200,217 +200,217 @@ cd &amp;lt;directory name&amp;gt;
 </content></entry><entry ><title >Configuration</title><id >aconfigurationinvalid date</id><link href="undefineddocs/configuration"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;Just like &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt;, the heart of Antwar, also Antwar has been built on the configuration. &lt;code&gt;antwar.config.js&lt;/code&gt; describes all metadata related to your site. This includes basic information such as site title, author, sections and so on. It also defines which theme and which plugins you use.&lt;/p&gt;
 &lt;h2 id=&quot;basic-example&quot;&gt;Basic Example&lt;/h2&gt;
 &lt;p&gt;This is (more or less) the configuration for this site. If you are used to working with javascript, most of this should look familiar.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;apos;use strict&amp;apos;;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-pi&quot;&gt;&amp;apos;use strict&amp;apos;&lt;/span&gt;;
 
-var rssPlugin = require(&amp;apos;antwar-rss-plugin&amp;apos;);
-var prevnextPlugin = require(&amp;apos;antwar-prevnext-plugin&amp;apos;);
-var highlightPlugin = require(&amp;apos;antwar-highlight-plugin&amp;apos;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; rssPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-rss-plugin&amp;apos;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; prevnextPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-prevnext-plugin&amp;apos;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; highlightPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-highlight-plugin&amp;apos;&lt;/span&gt;);
 
-module.exports = {
+&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
 
-  // Folder name for the output
-  output: &amp;apos;build&amp;apos;,
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Folder name for the output&lt;/span&gt;
+  output: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;build&amp;apos;&lt;/span&gt;,
 
-  // Name of the site
-  name: &amp;apos;Antwar&amp;apos;,
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Name of the site&lt;/span&gt;
+  name: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Antwar&amp;apos;&lt;/span&gt;,
 
-  // Name of the author
-  author: &amp;apos;Antwar&amp;apos;,
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Name of the author&lt;/span&gt;
+  author: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Antwar&amp;apos;&lt;/span&gt;,
 
-  // Branch to deploy to.
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Branch to deploy to.&lt;/span&gt;
   deploy: {
-    branch: &amp;apos;gh-pages&amp;apos;,
+    branch: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;gh-pages&amp;apos;&lt;/span&gt;,
   },
 
   plugins: [
     rssPlugin(),
     prevnextPlugin(),
     highlightPlugin({
-      style: function() {
-        require(&amp;apos;highlight.js/styles/github.css&amp;apos;);
+      style: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;highlight.js/styles/github.css&amp;apos;&lt;/span&gt;);
       },
-      languages: [&amp;apos;javascript&amp;apos;],
+      languages: [&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;javascript&amp;apos;&lt;/span&gt;],
     })
   ],
 
-  // Definitions for where the content is located
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Definitions for where the content is located&lt;/span&gt;
   paths: {
-    &amp;apos;/&amp;apos;: {
-      path: function() {
-        return require.context(&amp;apos;./pages&amp;apos;);
+    &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;: {
+      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./pages&amp;apos;&lt;/span&gt;);
       }
     },
     blog: {
-      path: function() {
-        return require.context(&amp;apos;./posts&amp;apos;, true, /^\.\/.*\.md$/);
+      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./posts&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
       },
-      draft: function() {
-        return require.context(&amp;apos;./drafts&amp;apos;, true, /^\.\/.*\.md$/);
+      draft: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./drafts&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
       },
-      layout: &amp;apos;blog&amp;apos;,
-      title: &amp;apos;Blog posts&amp;apos;,
+      layout: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;blog&amp;apos;&lt;/span&gt;,
+      title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Blog posts&amp;apos;&lt;/span&gt;,
     },
     docs: {
-      path: function() {
-        return require.context(&amp;apos;./docs&amp;apos;, true, /^\.\/.*\.md$/);
+      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./docs&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
       },
-      sort: function (items) {
-        return _.sortBy(items, function (item) {return item.file.sort});
+      sort: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;items&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; _.sortBy(items, &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;hljs-params&quot;&gt;item&lt;/span&gt;) &lt;/span&gt;{&lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; item.file.sort});
       },
       processItem: {
-        isDraft: function(o) {
-          return o.file.isDraft;
+        isDraft: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; o.file.isDraft;
         },
       },
-      layout: &amp;apos;docs&amp;apos;,
-      title: &amp;apos;Documentation&amp;apos;,
+      layout: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;docs&amp;apos;&lt;/span&gt;,
+      title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Documentation&amp;apos;&lt;/span&gt;,
     }
   },
 
-  // Theme and config for the theme
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Theme and config for the theme&lt;/span&gt;
   theme: {
-    name: &amp;apos;antwar-default-theme&amp;apos;,
+    name: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-default-theme&amp;apos;&lt;/span&gt;,
     navigation: [
-      {title: &amp;apos;Home&amp;apos;, url: &amp;apos;/&amp;apos;},
-      {title: &amp;apos;Documentation&amp;apos;, url: &amp;apos;/docs&amp;apos;},
-      {title: &amp;apos;Blog&amp;apos;, url: &amp;apos;/blog&amp;apos;}
+      {title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Home&amp;apos;&lt;/span&gt;, url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;},
+      {title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Documentation&amp;apos;&lt;/span&gt;, url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/docs&amp;apos;&lt;/span&gt;},
+      {title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Blog&amp;apos;&lt;/span&gt;, url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/blog&amp;apos;&lt;/span&gt;}
     ],
-    analyticsId: &amp;apos;UA-XXXXXXXXX-1&amp;apos;,
-    customStyles: &amp;apos;specific.scss&amp;apos;,
+    analyticsId: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;UA-XXXXXXXXX-1&amp;apos;&lt;/span&gt;,
+    customStyles: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;specific.scss&amp;apos;&lt;/span&gt;,
   }
 };
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;advanced-configuration&quot;&gt;Advanced Configuration&lt;/h2&gt;
 &lt;p&gt;The configuration is available at page level so you can use it in quite imaginative manners.&lt;/p&gt;
 &lt;p&gt;To give you a better idea of how to approach configuration consider the real life example below. It has been taken from &lt;a href=&quot;http://survivejs.com/&quot;&gt;SurviveJS&lt;/a&gt; site and is actually quite advanced example. You don&amp;apos;t need anything this complex for a casual blog. The default settings will get you quite far with that.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;apos;use strict&amp;apos;;
-var _ = require(&amp;apos;lodash&amp;apos;);
-var removeMd = require(&amp;apos;remove-markdown&amp;apos;);
-var markdown = require(&amp;apos;commonmark&amp;apos;);
-var highlightPlugin = require(&amp;apos;antwar-highlight-plugin&amp;apos;);
-var prevnextPlugin = require(&amp;apos;antwar-prevnext-plugin&amp;apos;);
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-pi&quot;&gt;&amp;apos;use strict&amp;apos;&lt;/span&gt;;
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; _ = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;lodash&amp;apos;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; removeMd = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;remove-markdown&amp;apos;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; markdown = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;commonmark&amp;apos;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; highlightPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-highlight-plugin&amp;apos;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; prevnextPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-prevnext-plugin&amp;apos;&lt;/span&gt;);
 
-var mdReader = new markdown.Parser();
-var mdWriter = new markdown.HtmlRenderer();
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; mdReader = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; markdown.Parser();
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; mdWriter = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; markdown.HtmlRenderer();
 
-module.exports = {
-  // copying files so I can refer to them easily from content
+&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
+  &lt;span class=&quot;hljs-comment&quot;&gt;// copying files so I can refer to them easily from content&lt;/span&gt;
   assets: [
     {
-      from: &amp;apos;manuscript/images&amp;apos;,
-      to: &amp;apos;images&amp;apos;,
+      from: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;manuscript/images&amp;apos;&lt;/span&gt;,
+      to: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;images&amp;apos;&lt;/span&gt;,
     },
     {
-      from: &amp;apos;./CNAME&amp;apos;,
-      to: &amp;apos;./&amp;apos;,
+      from: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./CNAME&amp;apos;&lt;/span&gt;,
+      to: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./&amp;apos;&lt;/span&gt;,
     }
   ],
-  // setting up general meta for output and such
-  output: &amp;apos;build&amp;apos;,
-  name: &amp;apos;SurviveJS - Survive the jungles of JavaScript&amp;apos;,
-  author: &amp;apos;Juho Veps&amp;#xE4;l&amp;#xE4;inen&amp;apos;,
+  &lt;span class=&quot;hljs-comment&quot;&gt;// setting up general meta for output and such&lt;/span&gt;
+  output: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;build&amp;apos;&lt;/span&gt;,
+  name: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;SurviveJS - Survive the jungles of JavaScript&amp;apos;&lt;/span&gt;,
+  author: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Juho Veps&amp;#xE4;l&amp;#xE4;inen&amp;apos;&lt;/span&gt;,
   deploy: {
-    branch: &amp;apos;gh-pages&amp;apos;,
+    branch: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;gh-pages&amp;apos;&lt;/span&gt;,
   },
-  // global plugins for whole site
+  &lt;span class=&quot;hljs-comment&quot;&gt;// global plugins for whole site&lt;/span&gt;
   plugins: [
     highlightPlugin({
-      style: function() {
-        require(&amp;apos;highlight.js/styles/github.css&amp;apos;);
+      style: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;highlight.js/styles/github.css&amp;apos;&lt;/span&gt;);
       },
-      languages: [&amp;apos;bash&amp;apos;, &amp;apos;javascript&amp;apos;, &amp;apos;json&amp;apos;, &amp;apos;html&amp;apos;],
+      languages: [&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;bash&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;javascript&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;json&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;html&amp;apos;&lt;/span&gt;],
     }),
     prevnextPlugin({
       bodyContent: prevnextPlugin.bodyContent({
-        previous: function(o) {
-          return o.title;
+        previous: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; o.title;
         },
-        previousUrl: function(o) {
-          return &amp;apos;../&amp;apos; + o.split(&amp;apos;/&amp;apos;).slice(1).join(&amp;apos;/&amp;apos;);
+        previousUrl: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;../&amp;apos;&lt;/span&gt; + o.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;).slice(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;).join(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;);
         },
-        next: function(o) {
-          return o.title;
+        next: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; o.title;
         },
-        nextUrl: function(o) {
-          return &amp;apos;../&amp;apos; + o.split(&amp;apos;/&amp;apos;).slice(1).join(&amp;apos;/&amp;apos;);
+        nextUrl: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;../&amp;apos;&lt;/span&gt; + o.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;).slice(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;).join(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;);
         },
       })
     }),
   ],
-  // choosing a theme and setting some theme specific settings
+  &lt;span class=&quot;hljs-comment&quot;&gt;// choosing a theme and setting some theme specific settings&lt;/span&gt;
   theme: {
-    customStyles: &amp;apos;custom.scss&amp;apos;,
-    name: &amp;apos;antwar-default-theme&amp;apos;,
+    customStyles: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;custom.scss&amp;apos;&lt;/span&gt;,
+    name: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-default-theme&amp;apos;&lt;/span&gt;,
     navigation: [
-      {title: &amp;apos;Home&amp;apos;, url: &amp;apos;/&amp;apos;},
-      {title: &amp;apos;Table of Contents&amp;apos;, url: &amp;apos;/webpack_react&amp;apos;},
+      {title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Home&amp;apos;&lt;/span&gt;, url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;},
+      {title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Table of Contents&amp;apos;&lt;/span&gt;, url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/webpack_react&amp;apos;&lt;/span&gt;},
     ],
   },
-  // describing site structure and content mapping
+  &lt;span class=&quot;hljs-comment&quot;&gt;// describing site structure and content mapping&lt;/span&gt;
   paths: {
-    &amp;apos;/&amp;apos;: {
-      path: function() {
-        // require.context is a feature of Webpack. It just loads
-        // the content of given directory so we can process it
-        return require.context(&amp;apos;./pages&amp;apos;);
+    &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;: {
+      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-comment&quot;&gt;// require.context is a feature of Webpack. It just loads&lt;/span&gt;
+        &lt;span class=&quot;hljs-comment&quot;&gt;// the content of given directory so we can process it&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./pages&amp;apos;&lt;/span&gt;);
       },
     },
-    // mapping an ebook (directory of Markdown files) to a section
+    &lt;span class=&quot;hljs-comment&quot;&gt;// mapping an ebook (directory of Markdown files) to a section&lt;/span&gt;
     webpack_react: {
-      title: &amp;apos;Table of Contents&amp;apos;,
-      path: function() {
-        // here we want just Markdown files. In order to be future proof
-        // I get the files recursively (second parameter). This would
-        // just generate a deeper structure.
-        return require.context(&amp;apos;./manuscript&amp;apos;, true, /^\.\/.*\.md$/);
+      title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Table of Contents&amp;apos;&lt;/span&gt;,
+      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-comment&quot;&gt;// here we want just Markdown files. In order to be future proof&lt;/span&gt;
+        &lt;span class=&quot;hljs-comment&quot;&gt;// I get the files recursively (second parameter). This would&lt;/span&gt;
+        &lt;span class=&quot;hljs-comment&quot;&gt;// just generate a deeper structure.&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./manuscript&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
       },
       processItem: {
-        title: function(o) {
-          // picking title from first line (Markdown stripped)
-          return removeMd(o.file.__content.split(&amp;apos;\n&amp;apos;)[0]);
+        title: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-comment&quot;&gt;// picking title from first line (Markdown stripped)&lt;/span&gt;
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; removeMd(o.file.__content.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;)[&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;]);
         },
-        content: function(o) {
-          // picking everything except the first line (title, remember)
-          var content = o.file.__content.split(&amp;apos;\n&amp;apos;).slice(1).join(&amp;apos;\n&amp;apos;);
+        content: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-comment&quot;&gt;// picking everything except the first line (title, remember)&lt;/span&gt;
+          &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; content = o.file.__content.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;).slice(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;).join(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;);
 
-          // rendering to html
-          return mdWriter.render(mdReader.parse(content));
+          &lt;span class=&quot;hljs-comment&quot;&gt;// rendering to html&lt;/span&gt;
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; mdWriter.render(mdReader.parse(content));
         },
-        preview: function(o) {
-          // picking a limited amount of content to show for preview
-          var previewLimit = 150;
-          var content = o.file.__content.split(&amp;apos;\n&amp;apos;).slice(1).join(&amp;apos;\n&amp;apos;);
-          var stripped = removeMd(content);
+        preview: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-comment&quot;&gt;// picking a limited amount of content to show for preview&lt;/span&gt;
+          &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; previewLimit = &lt;span class=&quot;hljs-number&quot;&gt;150&lt;/span&gt;;
+          &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; content = o.file.__content.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;).slice(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;).join(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;);
+          &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; stripped = removeMd(content);
 
-          if(stripped.length &amp;gt; previewLimit) {
-            return stripped.substr(0, previewLimit) + &amp;apos;&amp;#x2026;&amp;apos;;
+          &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(stripped.length &amp;gt; previewLimit) {
+            &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; stripped.substr(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, previewLimit) + &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;&amp;#x2026;&amp;apos;&lt;/span&gt;;
           }
 
-          return stripped;
+          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; stripped;
         },
       },
-      sort: function(files) {
-        // sorting section index based on an order defined at a separate file
-        var order = require(&amp;apos;raw!./manuscript/Book.txt&amp;apos;).split(&amp;apos;\n&amp;apos;).filter(id);
-        var ret = [];
+      sort: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;files&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-comment&quot;&gt;// sorting section index based on an order defined at a separate file&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; order = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;raw!./manuscript/Book.txt&amp;apos;&lt;/span&gt;).split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;).filter(id);
+        &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; ret = [];
 
-        order.forEach(function(name) {
-          var result = _.findWhere(files, {
+        order.forEach(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;name&lt;/span&gt;) &lt;/span&gt;{
+          &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; result = _.findWhere(files, {
             name: name,
           });
 
-          if(result) {
+          &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(result) {
             ret.push(result);
           }
         });
 
-        return ret;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; ret;
       },
     }
   }
 };
 
-function id(a) {return a;}
+&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;id&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;a&lt;/span&gt;) &lt;/span&gt;{&lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; a;}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In practice your configuration will likely look very different compared to this example. As you can see, Antwar allows you to shape a section mapping quite freely. The system leverages Webpack heavily.&lt;/p&gt;
 &lt;p&gt;In addition you may use whatever tricks you have as long as they work in frontend environment. This means you won&amp;apos;t have direct access to Node modules such as &lt;code&gt;fs&lt;/code&gt; but in practice this isn&amp;apos;t a problem as Webpack can help you as above.&lt;/p&gt;
@@ -431,8 +431,8 @@ function id(a) {return a;}
 &lt;p&gt;First of all you should &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;set up a CNAME file&lt;/a&gt; to project root. In addition you&amp;apos;ll need to make Antwar to include it with your build through configuration like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;assets: [
   {
-    from: &amp;apos;./CNAME&amp;apos;,
-    to: &amp;apos;./&amp;apos;,
+    from: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./CNAME&amp;apos;&lt;/span&gt;,
+    to: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./&amp;apos;&lt;/span&gt;,
   },
   ...
 ],
