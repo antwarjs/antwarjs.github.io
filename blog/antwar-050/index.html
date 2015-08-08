@@ -1,4 +1,4 @@
-<html><head><title>Antwar 0.5.0 - Halfway Towards Awesomeness / Antwar</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"><link rel="icon" type="image/png" href="../../assets/img/favicon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" href="../../assets/main.css"></head><body><div><div class="nav__wrapper"><input type="checkbox" class="nav__toggle" id="nav__toggle"><label class="nav__toggle-label" for="nav__toggle"></label><nav class="nav"><div class="nav__link"><a href="/">Home</a></div><div class="nav__link"><a href="/docs">Documentation</a></div><div class="nav__link"><a href="/blog">Blog</a></div></nav></div><main role="main"><div class="post"><h1 class="post__heading">Antwar 0.5.0 - Halfway Towards Awesomeness</h1><div class="post__content"><div><p>Antwar is one of those projects that was born to fill a need. I wanted to port my <a href="http://nixtu.info/">Blogspot blog</a> to some platform that&apos;s more fun to work with. Initially I looked into <a href="https://ghost.org/">Ghost</a>. The fact that it&apos;s not static was a big turn off. I wanted my blog over Git.</p>
+<html><head><title>Antwar 0.5.0 - Halfway Towards Awesomeness / Antwar</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"><meta name="description" content="Antwar is speeding up towards maturity"><meta name="keywords" content=""><link rel="icon" type="image/png" href="../../assets/img/favicon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" href="../../assets/main.css"></head><body><div><div class="nav__wrapper"><input type="checkbox" class="nav__toggle" id="nav__toggle"><label class="nav__toggle-label" for="nav__toggle"></label><nav class="nav"><div class="nav__link"><a href="/">Home</a></div><div class="nav__link"><a href="/docs">Documentation</a></div><div class="nav__link"><a href="/blog">Blog</a></div></nav></div><main role="main"><div class="post"><h1 class="post__heading">Antwar 0.5.0 - Halfway Towards Awesomeness</h1><div class="post__content"><div><p>Antwar is one of those projects that was born to fill a need. I wanted to port my <a href="http://nixtu.info/">Blogspot blog</a> to some platform that&apos;s more fun to work with. Initially I looked into <a href="https://ghost.org/">Ghost</a>. The fact that it&apos;s not static was a big turn off. I wanted my blog over Git.</p>
 <blockquote>
 <p>During my dabblings with Ghost I did write a migration path in form of <a href="https://github.com/bebraw/blogger2ghost">blogger2ghost</a>, though. Eventually I came upon <a href="https://github.com/antwarjs/antwar">Antwar</a> and here I am.</p>
 </blockquote>
@@ -20,12 +20,12 @@
 <pre><code class="lang-javascript"><span class="hljs-built_in">module</span>.exports = {
   assets: [
     {
-      from: &apos;manuscript/images&apos;,
-      to: &apos;images&apos;,
+      from: <span class="hljs-string">&apos;manuscript/images&apos;</span>,
+      to: <span class="hljs-string">&apos;images&apos;</span>,
     },
     {
-      from: &apos;./CNAME&apos;,
-      to: &apos;./&apos;,
+      from: <span class="hljs-string">&apos;./CNAME&apos;</span>,
+      to: <span class="hljs-string">&apos;./&apos;</span>,
     }
   ],
   ...
@@ -34,16 +34,16 @@
 <h3 id="plugins">Plugins</h3>
 <p>We decided to standardize on plugin format. Now each plugin should return a function which takes possible options. In this case I&apos;m setting up highlighting and previous/next links for all sections of the site. Later on we intend to allow more specific configuration per site section.</p>
 <p>Plugins can inject new metadata and even markup to pages making this a powerful extension mechanism. Besides highlight and prevnext we have set up RSS plugin and there are plans for a few others including various commenting plugins.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> highlightPlugin = <span class="hljs-built_in">require</span>(&apos;antwar-highlight-plugin&apos;);
-<span class="hljs-keyword">var</span> prevnextPlugin = <span class="hljs-built_in">require</span>(&apos;antwar-prevnext-plugin&apos;);
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> highlightPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;antwar-highlight-plugin&apos;</span>);
+<span class="hljs-keyword">var</span> prevnextPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;antwar-prevnext-plugin&apos;</span>);
 
 <span class="hljs-built_in">module</span>.exports = {
   plugins: [
     highlightPlugin({
       style: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-built_in">require</span>(&apos;highlight.js/styles/github.css&apos;);
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;highlight.js/styles/github.css&apos;</span>);
       },
-      languages: [&apos;bash&apos;, &apos;javascript&apos;, &apos;json&apos;, &apos;html&apos;],
+      languages: [<span class="hljs-string">&apos;bash&apos;</span>, <span class="hljs-string">&apos;javascript&apos;</span>, <span class="hljs-string">&apos;json&apos;</span>, <span class="hljs-string">&apos;html&apos;</span>],
     }),
     prevnextPlugin({
       ...
@@ -54,18 +54,18 @@
 </code></pre>
 <h3 id="theming">Theming</h3>
 <p>In this iteration we didn&apos;t spend much thought on theming. Themes gained some minor addition but I consider this portion of Antwar underdeveloped. We have a nice looking default theme thanks to Andreas but I feel there&apos;s room for improvement here. For completeness sake consider the example below:</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="lang-javascript"><span class="hljs-built_in">module</span>.exports = {
   theme: {
-    customStyles: &apos;custom.scss&apos;,
-    name: &apos;antwar-default-theme&apos;,
+    customStyles: <span class="hljs-string">&apos;custom.scss&apos;</span>,
+    name: <span class="hljs-string">&apos;antwar-default-theme&apos;</span>,
     navigation: [
       {
-        title: &apos;Home&apos;,
-        url: &apos;/&apos;
+        title: <span class="hljs-string">&apos;Home&apos;</span>,
+        url: <span class="hljs-string">&apos;/&apos;</span>
       },
       {
-        title: &apos;Table of Contents&apos;,
-        url: &apos;/webpack_react&apos;
+        title: <span class="hljs-string">&apos;Table of Contents&apos;</span>,
+        url: <span class="hljs-string">&apos;/webpack_react&apos;</span>
       },
     ],
   },
@@ -75,38 +75,38 @@
 <p>I think we&apos;ll push navigation to a plugin eventually. Now it just renders a navigation like that for each page. This is handy but not as good as it can be.</p>
 <h3 id="paths">Paths</h3>
 <p>The greatest innovation of Antwar 0.5.0 is the path configuration. Paths allow you to map content to your site. We let Webpack do the heavy lifting for us as you can see below. The system allows you to perform heavy transformations over data, sort it and so on.</p>
-<pre><code class="lang-javascript">module.exports = {
+<pre><code class="lang-javascript"><span class="hljs-built_in">module</span>.exports = {
   paths: {
-    &apos;/&apos;: {
-      path: function() {
-        return require.context(&apos;./pages&apos;);
+    <span class="hljs-string">&apos;/&apos;</span>: {
+      path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./pages&apos;</span>);
       },
     },
     webpack_react: {
-      title: &apos;Table of Contents&apos;,
-      path: function() {
-        return require.context(&apos;./manuscript&apos;, true, /^\.\/.*\.md$/);
+      title: <span class="hljs-string">&apos;Table of Contents&apos;</span>,
+      path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./manuscript&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^\.\/.*\.md$/</span>);
       },
       processItem: {
-        title: function(o) {
-          return removeMd(o.file.__content.split(&apos;\n&apos;)[0]);
+        title: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-keyword">return</span> removeMd(o.file.__content.split(<span class="hljs-string">&apos;\n&apos;</span>)[<span class="hljs-number">0</span>]);
         },
-        content: function(o) {
-          var content = o.file.__content.split(&apos;\n&apos;).slice(1).join(&apos;\n&apos;);
+        content: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-keyword">var</span> content = o.file.__content.split(<span class="hljs-string">&apos;\n&apos;</span>).slice(<span class="hljs-number">1</span>).join(<span class="hljs-string">&apos;\n&apos;</span>);
 
-          return mdWriter.render(mdReader.parse(content));
+          <span class="hljs-keyword">return</span> mdWriter.render(mdReader.parse(content));
         },
-        preview: function(o) {
+        preview: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
           ...
         },
       },
-      sort: function(files) {
-        var order = require(&apos;raw!./manuscript/Book.txt&apos;).split(&apos;\n&apos;).filter(id);
-        var ret = [];
+      sort: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">files</span>) </span>{
+        <span class="hljs-keyword">var</span> order = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;raw!./manuscript/Book.txt&apos;</span>).split(<span class="hljs-string">&apos;\n&apos;</span>).filter(id);
+        <span class="hljs-keyword">var</span> ret = [];
 
         ...
 
-        return ret;
+        <span class="hljs-keyword">return</span> ret;
       },
     }
   }

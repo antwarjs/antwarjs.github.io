@@ -1,217 +1,217 @@
-<html><head><title>Configuration / Antwar</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"><link rel="icon" type="image/png" href="../../assets/img/favicon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" href="../../assets/main.css"></head><body><div><div class="nav__wrapper"><input type="checkbox" class="nav__toggle" id="nav__toggle"><label class="nav__toggle-label" for="nav__toggle"></label><nav class="nav"><div class="nav__link"><a href="/">Home</a></div><div class="nav__link"><a href="/docs">Documentation</a></div><div class="nav__link"><a href="/blog">Blog</a></div></nav></div><main role="main"><div class="post"><div class="docs-nav__wrapper"><h4 class="docs-nav--header">Documentation</h4><div class="docs-nav"><a href="/docs/getting-started" class="docs-nav__link">Getting started</a><a href="/docs/faq" class="docs-nav__link">FAQ</a><span class="docs-nav__link docs-nav__link--current">Configuration</span><a href="/docs/deploying-to-github-pages" class="docs-nav__link">Deploying to GitHub Pages</a><a href="/docs/themes" class="docs-nav__link">Theming</a></div></div><h1 class="post__heading">Configuration</h1><div class="post__content"><div><p>Just like <a href="https://webpack.github.io/">Webpack</a>, the heart of Antwar, also Antwar has been built on the configuration. <code>antwar.config.js</code> describes all metadata related to your site. This includes basic information such as site title, author, sections and so on. It also defines which theme and which plugins you use.</p>
+<html><head><title>Configuration / Antwar</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"><meta name="description" content="Understand configuration, understand Antwar"><meta name="keywords" content=""><link rel="icon" type="image/png" href="../../assets/img/favicon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" href="../../assets/main.css"></head><body><div><div class="nav__wrapper"><input type="checkbox" class="nav__toggle" id="nav__toggle"><label class="nav__toggle-label" for="nav__toggle"></label><nav class="nav"><div class="nav__link"><a href="/">Home</a></div><div class="nav__link"><a href="/docs">Documentation</a></div><div class="nav__link"><a href="/blog">Blog</a></div></nav></div><main role="main"><div class="post"><div class="docs-nav__wrapper"><h4 class="docs-nav--header">Documentation</h4><div class="docs-nav"><a href="/docs/getting-started" class="docs-nav__link">Getting started</a><a href="/docs/faq" class="docs-nav__link">FAQ</a><span class="docs-nav__link docs-nav__link--current">Configuration</span><a href="/docs/deploying-to-github-pages" class="docs-nav__link">Deploying to GitHub Pages</a><a href="/docs/themes" class="docs-nav__link">Theming</a></div></div><h1 class="post__heading">Configuration</h1><div class="post__content"><div><p>Just like <a href="https://webpack.github.io/">Webpack</a>, the heart of Antwar, also Antwar has been built on the configuration. <code>antwar.config.js</code> describes all metadata related to your site. This includes basic information such as site title, author, sections and so on. It also defines which theme and which plugins you use.</p>
 <h2 id="basic-example">Basic Example</h2>
 <p>This is (more or less) the configuration for this site. If you are used to working with javascript, most of this should look familiar.</p>
-<pre><code class="lang-javascript">&apos;use strict&apos;;
+<pre><code class="lang-javascript"><span class="hljs-pi">&apos;use strict&apos;</span>;
 
-var rssPlugin = require(&apos;antwar-rss-plugin&apos;);
-var prevnextPlugin = require(&apos;antwar-prevnext-plugin&apos;);
-var highlightPlugin = require(&apos;antwar-highlight-plugin&apos;);
+<span class="hljs-keyword">var</span> rssPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;antwar-rss-plugin&apos;</span>);
+<span class="hljs-keyword">var</span> prevnextPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;antwar-prevnext-plugin&apos;</span>);
+<span class="hljs-keyword">var</span> highlightPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;antwar-highlight-plugin&apos;</span>);
 
-module.exports = {
+<span class="hljs-built_in">module</span>.exports = {
 
-  // Folder name for the output
-  output: &apos;build&apos;,
+  <span class="hljs-comment">// Folder name for the output</span>
+  output: <span class="hljs-string">&apos;build&apos;</span>,
 
-  // Name of the site
-  name: &apos;Antwar&apos;,
+  <span class="hljs-comment">// Name of the site</span>
+  name: <span class="hljs-string">&apos;Antwar&apos;</span>,
 
-  // Name of the author
-  author: &apos;Antwar&apos;,
+  <span class="hljs-comment">// Name of the author</span>
+  author: <span class="hljs-string">&apos;Antwar&apos;</span>,
 
-  // Branch to deploy to.
+  <span class="hljs-comment">// Branch to deploy to.</span>
   deploy: {
-    branch: &apos;gh-pages&apos;,
+    branch: <span class="hljs-string">&apos;gh-pages&apos;</span>,
   },
 
   plugins: [
     rssPlugin(),
     prevnextPlugin(),
     highlightPlugin({
-      style: function() {
-        require(&apos;highlight.js/styles/github.css&apos;);
+      style: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;highlight.js/styles/github.css&apos;</span>);
       },
-      languages: [&apos;javascript&apos;],
+      languages: [<span class="hljs-string">&apos;javascript&apos;</span>],
     })
   ],
 
-  // Definitions for where the content is located
+  <span class="hljs-comment">// Definitions for where the content is located</span>
   paths: {
-    &apos;/&apos;: {
-      path: function() {
-        return require.context(&apos;./pages&apos;);
+    <span class="hljs-string">&apos;/&apos;</span>: {
+      path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./pages&apos;</span>);
       }
     },
     blog: {
-      path: function() {
-        return require.context(&apos;./posts&apos;, true, /^\.\/.*\.md$/);
+      path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./posts&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^\.\/.*\.md$/</span>);
       },
-      draft: function() {
-        return require.context(&apos;./drafts&apos;, true, /^\.\/.*\.md$/);
+      draft: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./drafts&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^\.\/.*\.md$/</span>);
       },
-      layout: &apos;blog&apos;,
-      title: &apos;Blog posts&apos;,
+      layout: <span class="hljs-string">&apos;blog&apos;</span>,
+      title: <span class="hljs-string">&apos;Blog posts&apos;</span>,
     },
     docs: {
-      path: function() {
-        return require.context(&apos;./docs&apos;, true, /^\.\/.*\.md$/);
+      path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./docs&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^\.\/.*\.md$/</span>);
       },
-      sort: function (items) {
-        return _.sortBy(items, function (item) {return item.file.sort});
+      sort: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">items</span>) </span>{
+        <span class="hljs-keyword">return</span> _.sortBy(items, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{<span class="hljs-keyword">return</span> item.file.sort});
       },
       processItem: {
-        isDraft: function(o) {
-          return o.file.isDraft;
+        isDraft: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-keyword">return</span> o.file.isDraft;
         },
       },
-      layout: &apos;docs&apos;,
-      title: &apos;Documentation&apos;,
+      layout: <span class="hljs-string">&apos;docs&apos;</span>,
+      title: <span class="hljs-string">&apos;Documentation&apos;</span>,
     }
   },
 
-  // Theme and config for the theme
+  <span class="hljs-comment">// Theme and config for the theme</span>
   theme: {
-    name: &apos;antwar-default-theme&apos;,
+    name: <span class="hljs-string">&apos;antwar-default-theme&apos;</span>,
     navigation: [
-      {title: &apos;Home&apos;, url: &apos;/&apos;},
-      {title: &apos;Documentation&apos;, url: &apos;/docs&apos;},
-      {title: &apos;Blog&apos;, url: &apos;/blog&apos;}
+      {title: <span class="hljs-string">&apos;Home&apos;</span>, url: <span class="hljs-string">&apos;/&apos;</span>},
+      {title: <span class="hljs-string">&apos;Documentation&apos;</span>, url: <span class="hljs-string">&apos;/docs&apos;</span>},
+      {title: <span class="hljs-string">&apos;Blog&apos;</span>, url: <span class="hljs-string">&apos;/blog&apos;</span>}
     ],
-    analyticsId: &apos;UA-XXXXXXXXX-1&apos;,
-    customStyles: &apos;specific.scss&apos;,
+    analyticsId: <span class="hljs-string">&apos;UA-XXXXXXXXX-1&apos;</span>,
+    customStyles: <span class="hljs-string">&apos;specific.scss&apos;</span>,
   }
 };
 </code></pre>
 <h2 id="advanced-configuration">Advanced Configuration</h2>
 <p>The configuration is available at page level so you can use it in quite imaginative manners.</p>
 <p>To give you a better idea of how to approach configuration consider the real life example below. It has been taken from <a href="http://survivejs.com/">SurviveJS</a> site and is actually quite advanced example. You don&apos;t need anything this complex for a casual blog. The default settings will get you quite far with that.</p>
-<pre><code class="lang-javascript">&apos;use strict&apos;;
-var _ = require(&apos;lodash&apos;);
-var removeMd = require(&apos;remove-markdown&apos;);
-var markdown = require(&apos;commonmark&apos;);
-var highlightPlugin = require(&apos;antwar-highlight-plugin&apos;);
-var prevnextPlugin = require(&apos;antwar-prevnext-plugin&apos;);
+<pre><code class="lang-javascript"><span class="hljs-pi">&apos;use strict&apos;</span>;
+<span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;lodash&apos;</span>);
+<span class="hljs-keyword">var</span> removeMd = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;remove-markdown&apos;</span>);
+<span class="hljs-keyword">var</span> markdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;commonmark&apos;</span>);
+<span class="hljs-keyword">var</span> highlightPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;antwar-highlight-plugin&apos;</span>);
+<span class="hljs-keyword">var</span> prevnextPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;antwar-prevnext-plugin&apos;</span>);
 
-var mdReader = new markdown.Parser();
-var mdWriter = new markdown.HtmlRenderer();
+<span class="hljs-keyword">var</span> mdReader = <span class="hljs-keyword">new</span> markdown.Parser();
+<span class="hljs-keyword">var</span> mdWriter = <span class="hljs-keyword">new</span> markdown.HtmlRenderer();
 
-module.exports = {
-  // copying files so I can refer to them easily from content
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// copying files so I can refer to them easily from content</span>
   assets: [
     {
-      from: &apos;manuscript/images&apos;,
-      to: &apos;images&apos;,
+      from: <span class="hljs-string">&apos;manuscript/images&apos;</span>,
+      to: <span class="hljs-string">&apos;images&apos;</span>,
     },
     {
-      from: &apos;./CNAME&apos;,
-      to: &apos;./&apos;,
+      from: <span class="hljs-string">&apos;./CNAME&apos;</span>,
+      to: <span class="hljs-string">&apos;./&apos;</span>,
     }
   ],
-  // setting up general meta for output and such
-  output: &apos;build&apos;,
-  name: &apos;SurviveJS - Survive the jungles of JavaScript&apos;,
-  author: &apos;Juho Veps&#xE4;l&#xE4;inen&apos;,
+  <span class="hljs-comment">// setting up general meta for output and such</span>
+  output: <span class="hljs-string">&apos;build&apos;</span>,
+  name: <span class="hljs-string">&apos;SurviveJS - Survive the jungles of JavaScript&apos;</span>,
+  author: <span class="hljs-string">&apos;Juho Veps&#xE4;l&#xE4;inen&apos;</span>,
   deploy: {
-    branch: &apos;gh-pages&apos;,
+    branch: <span class="hljs-string">&apos;gh-pages&apos;</span>,
   },
-  // global plugins for whole site
+  <span class="hljs-comment">// global plugins for whole site</span>
   plugins: [
     highlightPlugin({
-      style: function() {
-        require(&apos;highlight.js/styles/github.css&apos;);
+      style: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;highlight.js/styles/github.css&apos;</span>);
       },
-      languages: [&apos;bash&apos;, &apos;javascript&apos;, &apos;json&apos;, &apos;html&apos;],
+      languages: [<span class="hljs-string">&apos;bash&apos;</span>, <span class="hljs-string">&apos;javascript&apos;</span>, <span class="hljs-string">&apos;json&apos;</span>, <span class="hljs-string">&apos;html&apos;</span>],
     }),
     prevnextPlugin({
       bodyContent: prevnextPlugin.bodyContent({
-        previous: function(o) {
-          return o.title;
+        previous: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-keyword">return</span> o.title;
         },
-        previousUrl: function(o) {
-          return &apos;../&apos; + o.split(&apos;/&apos;).slice(1).join(&apos;/&apos;);
+        previousUrl: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;../&apos;</span> + o.split(<span class="hljs-string">&apos;/&apos;</span>).slice(<span class="hljs-number">1</span>).join(<span class="hljs-string">&apos;/&apos;</span>);
         },
-        next: function(o) {
-          return o.title;
+        next: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-keyword">return</span> o.title;
         },
-        nextUrl: function(o) {
-          return &apos;../&apos; + o.split(&apos;/&apos;).slice(1).join(&apos;/&apos;);
+        nextUrl: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;../&apos;</span> + o.split(<span class="hljs-string">&apos;/&apos;</span>).slice(<span class="hljs-number">1</span>).join(<span class="hljs-string">&apos;/&apos;</span>);
         },
       })
     }),
   ],
-  // choosing a theme and setting some theme specific settings
+  <span class="hljs-comment">// choosing a theme and setting some theme specific settings</span>
   theme: {
-    customStyles: &apos;custom.scss&apos;,
-    name: &apos;antwar-default-theme&apos;,
+    customStyles: <span class="hljs-string">&apos;custom.scss&apos;</span>,
+    name: <span class="hljs-string">&apos;antwar-default-theme&apos;</span>,
     navigation: [
-      {title: &apos;Home&apos;, url: &apos;/&apos;},
-      {title: &apos;Table of Contents&apos;, url: &apos;/webpack_react&apos;},
+      {title: <span class="hljs-string">&apos;Home&apos;</span>, url: <span class="hljs-string">&apos;/&apos;</span>},
+      {title: <span class="hljs-string">&apos;Table of Contents&apos;</span>, url: <span class="hljs-string">&apos;/webpack_react&apos;</span>},
     ],
   },
-  // describing site structure and content mapping
+  <span class="hljs-comment">// describing site structure and content mapping</span>
   paths: {
-    &apos;/&apos;: {
-      path: function() {
-        // require.context is a feature of Webpack. It just loads
-        // the content of given directory so we can process it
-        return require.context(&apos;./pages&apos;);
+    <span class="hljs-string">&apos;/&apos;</span>: {
+      path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// require.context is a feature of Webpack. It just loads</span>
+        <span class="hljs-comment">// the content of given directory so we can process it</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./pages&apos;</span>);
       },
     },
-    // mapping an ebook (directory of Markdown files) to a section
+    <span class="hljs-comment">// mapping an ebook (directory of Markdown files) to a section</span>
     webpack_react: {
-      title: &apos;Table of Contents&apos;,
-      path: function() {
-        // here we want just Markdown files. In order to be future proof
-        // I get the files recursively (second parameter). This would
-        // just generate a deeper structure.
-        return require.context(&apos;./manuscript&apos;, true, /^\.\/.*\.md$/);
+      title: <span class="hljs-string">&apos;Table of Contents&apos;</span>,
+      path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// here we want just Markdown files. In order to be future proof</span>
+        <span class="hljs-comment">// I get the files recursively (second parameter). This would</span>
+        <span class="hljs-comment">// just generate a deeper structure.</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./manuscript&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^\.\/.*\.md$/</span>);
       },
       processItem: {
-        title: function(o) {
-          // picking title from first line (Markdown stripped)
-          return removeMd(o.file.__content.split(&apos;\n&apos;)[0]);
+        title: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-comment">// picking title from first line (Markdown stripped)</span>
+          <span class="hljs-keyword">return</span> removeMd(o.file.__content.split(<span class="hljs-string">&apos;\n&apos;</span>)[<span class="hljs-number">0</span>]);
         },
-        content: function(o) {
-          // picking everything except the first line (title, remember)
-          var content = o.file.__content.split(&apos;\n&apos;).slice(1).join(&apos;\n&apos;);
+        content: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-comment">// picking everything except the first line (title, remember)</span>
+          <span class="hljs-keyword">var</span> content = o.file.__content.split(<span class="hljs-string">&apos;\n&apos;</span>).slice(<span class="hljs-number">1</span>).join(<span class="hljs-string">&apos;\n&apos;</span>);
 
-          // rendering to html
-          return mdWriter.render(mdReader.parse(content));
+          <span class="hljs-comment">// rendering to html</span>
+          <span class="hljs-keyword">return</span> mdWriter.render(mdReader.parse(content));
         },
-        preview: function(o) {
-          // picking a limited amount of content to show for preview
-          var previewLimit = 150;
-          var content = o.file.__content.split(&apos;\n&apos;).slice(1).join(&apos;\n&apos;);
-          var stripped = removeMd(content);
+        preview: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
+          <span class="hljs-comment">// picking a limited amount of content to show for preview</span>
+          <span class="hljs-keyword">var</span> previewLimit = <span class="hljs-number">150</span>;
+          <span class="hljs-keyword">var</span> content = o.file.__content.split(<span class="hljs-string">&apos;\n&apos;</span>).slice(<span class="hljs-number">1</span>).join(<span class="hljs-string">&apos;\n&apos;</span>);
+          <span class="hljs-keyword">var</span> stripped = removeMd(content);
 
-          if(stripped.length &gt; previewLimit) {
-            return stripped.substr(0, previewLimit) + &apos;&#x2026;&apos;;
+          <span class="hljs-keyword">if</span>(stripped.length &gt; previewLimit) {
+            <span class="hljs-keyword">return</span> stripped.substr(<span class="hljs-number">0</span>, previewLimit) + <span class="hljs-string">&apos;&#x2026;&apos;</span>;
           }
 
-          return stripped;
+          <span class="hljs-keyword">return</span> stripped;
         },
       },
-      sort: function(files) {
-        // sorting section index based on an order defined at a separate file
-        var order = require(&apos;raw!./manuscript/Book.txt&apos;).split(&apos;\n&apos;).filter(id);
-        var ret = [];
+      sort: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">files</span>) </span>{
+        <span class="hljs-comment">// sorting section index based on an order defined at a separate file</span>
+        <span class="hljs-keyword">var</span> order = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;raw!./manuscript/Book.txt&apos;</span>).split(<span class="hljs-string">&apos;\n&apos;</span>).filter(id);
+        <span class="hljs-keyword">var</span> ret = [];
 
-        order.forEach(function(name) {
-          var result = _.findWhere(files, {
+        order.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) </span>{
+          <span class="hljs-keyword">var</span> result = _.findWhere(files, {
             name: name,
           });
 
-          if(result) {
+          <span class="hljs-keyword">if</span>(result) {
             ret.push(result);
           }
         });
 
-        return ret;
+        <span class="hljs-keyword">return</span> ret;
       },
     }
   }
 };
 
-function id(a) {return a;}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">id</span>(<span class="hljs-params">a</span>) </span>{<span class="hljs-keyword">return</span> a;}
 </code></pre>
 <p>In practice your configuration will likely look very different compared to this example. As you can see, Antwar allows you to shape a section mapping quite freely. The system leverages Webpack heavily.</p>
 <p>In addition you may use whatever tricks you have as long as they work in frontend environment. This means you won&apos;t have direct access to Node modules such as <code>fs</code> but in practice this isn&apos;t a problem as Webpack can help you as above.</p>
