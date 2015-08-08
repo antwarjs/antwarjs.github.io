@@ -1,4 +1,4 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title >Antwar</title><link href="https://antwarjs.github.io/atom.xml" rel="self"> </link><link href="https://antwarjs.github.io/"> </link><updated >2015-07-15T09:21:57+03:00</updated><id >https://antwarjs.github.io/</id><author ><name >Antwar</name><email ></email></author><entry ><title >Antwar 0.5.0 - Halfway Towards Awesomeness</title><id >aantwar050halfwaytowardsawesomeness2015-06-04t00:00:00+03:00</id><link href="https://antwarjs.github.io/blog/antwar-050"></link><updated >2015-06-04T00:00:00+03:00</updated><content type="html">&lt;p&gt;Antwar is one of those projects that was born to fill a need. I wanted to port my &lt;a href=&quot;http://nixtu.info/&quot;&gt;Blogspot blog&lt;/a&gt; to some platform that&amp;apos;s more fun to work with. Initially I looked into &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. The fact that it&amp;apos;s not static was a big turn off. I wanted my blog over Git.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title >Antwar</title><link href="undefinedatom.xml" rel="self"> </link><link href="undefined"> </link><updated >2015-08-08T12:24:44+02:00</updated><id >undefined</id><author ><name >Antwar</name><email >undefined</email></author><entry ><title >Antwar 0.5.0 - Halfway Towards Awesomeness</title><id >aantwar050halfwaytowardsawesomeness2015-06-04t00:00:00+02:00</id><link href="undefinedblog/antwar-050"></link><updated >2015-06-04T00:00:00+02:00</updated><content type="html">&lt;p&gt;Antwar is one of those projects that was born to fill a need. I wanted to port my &lt;a href=&quot;http://nixtu.info/&quot;&gt;Blogspot blog&lt;/a&gt; to some platform that&amp;apos;s more fun to work with. Initially I looked into &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. The fact that it&amp;apos;s not static was a big turn off. I wanted my blog over Git.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;During my dabblings with Ghost I did write a migration path in form of &lt;a href=&quot;https://github.com/bebraw/blogger2ghost&quot;&gt;blogger2ghost&lt;/a&gt;, though. Eventually I came upon &lt;a href=&quot;https://github.com/antwarjs/antwar&quot;&gt;Antwar&lt;/a&gt; and here I am.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -20,12 +20,12 @@
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
   assets: [
     {
-      from: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;manuscript/images&amp;apos;&lt;/span&gt;,
-      to: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;images&amp;apos;&lt;/span&gt;,
+      from: &amp;apos;manuscript/images&amp;apos;,
+      to: &amp;apos;images&amp;apos;,
     },
     {
-      from: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./CNAME&amp;apos;&lt;/span&gt;,
-      to: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./&amp;apos;&lt;/span&gt;,
+      from: &amp;apos;./CNAME&amp;apos;,
+      to: &amp;apos;./&amp;apos;,
     }
   ],
   ...
@@ -34,16 +34,16 @@
 &lt;h3 id=&quot;plugins&quot;&gt;Plugins&lt;/h3&gt;
 &lt;p&gt;We decided to standardize on plugin format. Now each plugin should return a function which takes possible options. In this case I&amp;apos;m setting up highlighting and previous/next links for all sections of the site. Later on we intend to allow more specific configuration per site section.&lt;/p&gt;
 &lt;p&gt;Plugins can inject new metadata and even markup to pages making this a powerful extension mechanism. Besides highlight and prevnext we have set up RSS plugin and there are plans for a few others including various commenting plugins.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; highlightPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-highlight-plugin&amp;apos;&lt;/span&gt;);
-&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; prevnextPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-prevnext-plugin&amp;apos;&lt;/span&gt;);
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; highlightPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&amp;apos;antwar-highlight-plugin&amp;apos;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; prevnextPlugin = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&amp;apos;antwar-prevnext-plugin&amp;apos;);
 
 &lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
   plugins: [
     highlightPlugin({
       style: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;highlight.js/styles/github.css&amp;apos;&lt;/span&gt;);
+        &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&amp;apos;highlight.js/styles/github.css&amp;apos;);
       },
-      languages: [&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;bash&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;javascript&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;json&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;html&amp;apos;&lt;/span&gt;],
+      languages: [&amp;apos;bash&amp;apos;, &amp;apos;javascript&amp;apos;, &amp;apos;json&amp;apos;, &amp;apos;html&amp;apos;],
     }),
     prevnextPlugin({
       ...
@@ -54,18 +54,18 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;theming&quot;&gt;Theming&lt;/h3&gt;
 &lt;p&gt;In this iteration we didn&amp;apos;t spend much thought on theming. Themes gained some minor addition but I consider this portion of Antwar underdeveloped. We have a nice looking default theme thanks to Andreas but I feel there&amp;apos;s room for improvement here. For completeness sake consider the example below:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;module.exports = {
   theme: {
-    customStyles: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;custom.scss&amp;apos;&lt;/span&gt;,
-    name: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;antwar-default-theme&amp;apos;&lt;/span&gt;,
+    customStyles: &amp;apos;custom.scss&amp;apos;,
+    name: &amp;apos;antwar-default-theme&amp;apos;,
     navigation: [
       {
-        title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Home&amp;apos;&lt;/span&gt;,
-        url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;
+        title: &amp;apos;Home&amp;apos;,
+        url: &amp;apos;/&amp;apos;
       },
       {
-        title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Table of Contents&amp;apos;&lt;/span&gt;,
-        url: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/webpack_react&amp;apos;&lt;/span&gt;
+        title: &amp;apos;Table of Contents&amp;apos;,
+        url: &amp;apos;/webpack_react&amp;apos;
       },
     ],
   },
@@ -75,38 +75,38 @@
 &lt;p&gt;I think we&amp;apos;ll push navigation to a plugin eventually. Now it just renders a navigation like that for each page. This is handy but not as good as it can be.&lt;/p&gt;
 &lt;h3 id=&quot;paths&quot;&gt;Paths&lt;/h3&gt;
 &lt;p&gt;The greatest innovation of Antwar 0.5.0 is the path configuration. Paths allow you to map content to your site. We let Webpack do the heavy lifting for us as you can see below. The system allows you to perform heavy transformations over data, sort it and so on.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;module&lt;/span&gt;.exports = {
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;module.exports = {
   paths: {
-    &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;/&amp;apos;&lt;/span&gt;: {
-      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./pages&amp;apos;&lt;/span&gt;);
+    &amp;apos;/&amp;apos;: {
+      path: function() {
+        return require.context(&amp;apos;./pages&amp;apos;);
       },
     },
     webpack_react: {
-      title: &lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Table of Contents&amp;apos;&lt;/span&gt;,
-      path: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;./manuscript&amp;apos;&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
+      title: &amp;apos;Table of Contents&amp;apos;,
+      path: function() {
+        return require.context(&amp;apos;./manuscript&amp;apos;, true, /^\.\/.*\.md$/);
       },
       processItem: {
-        title: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
-          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; removeMd(o.file.__content.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;)[&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;]);
+        title: function(o) {
+          return removeMd(o.file.__content.split(&amp;apos;\n&amp;apos;)[0]);
         },
-        content: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
-          &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; content = o.file.__content.split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;).slice(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;).join(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;);
+        content: function(o) {
+          var content = o.file.__content.split(&amp;apos;\n&amp;apos;).slice(1).join(&amp;apos;\n&amp;apos;);
 
-          &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; mdWriter.render(mdReader.parse(content));
+          return mdWriter.render(mdReader.parse(content));
         },
-        preview: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+        preview: function(o) {
           ...
         },
       },
-      sort: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;files&lt;/span&gt;) &lt;/span&gt;{
-        &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; order = &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;raw!./manuscript/Book.txt&amp;apos;&lt;/span&gt;).split(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;\n&amp;apos;&lt;/span&gt;).filter(id);
-        &lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; ret = [];
+      sort: function(files) {
+        var order = require(&amp;apos;raw!./manuscript/Book.txt&amp;apos;).split(&amp;apos;\n&amp;apos;).filter(id);
+        var ret = [];
 
         ...
 
-        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; ret;
+        return ret;
       },
     }
   }
@@ -123,7 +123,7 @@
 &lt;p&gt;There is still design and work left to do on theming and plugin department. Even though it is easy to develop plugins to extend a site even right now I feel we&amp;apos;ll need to take the approach further. In particular we&amp;apos;ll want to make sure you can customize site per section adequately.&lt;/p&gt;
 &lt;p&gt;In order to provide better sites for various libraries of mine, such as &lt;a href=&quot;https://bebraw.github.io/reactabular/&quot;&gt;reactabular&lt;/a&gt;, I&amp;apos;ll need to think carefully about integrating interactive React examples to the output. I believe with a bit of work Antwar could become a good basis for project sites.&lt;/p&gt;
 &lt;p&gt;I believe Antwar 0.5.0 is an important step towards a refreshingly different static site generator. It is starting to show some promise already. If you are willing to tolerate a certain lack of features and possible little glitches, maybe you should give it a go. In any case keep an eye on the project as here we come!&lt;/p&gt;
-</content></entry><entry ><title >The sequel</title><id >athesequel2015-03-08t00:00:00+02:00</id><link href="https://antwarjs.github.io/blog/second-post"></link><updated >2015-03-08T00:00:00+02:00</updated><content type="html">&lt;p&gt;Posts are written in Markdown. More specifically, the kind of Markdown that&amp;apos;s called &lt;a href=&quot;http://commonmark.org/&quot;&gt;Commonmark&lt;/a&gt;. We&amp;apos;re guessing that you are familiar with Markdown, but anyway. Here are some of the things you can do with it.&lt;/p&gt;
+</content></entry><entry ><title >The sequel</title><id >athesequel2015-03-08t00:00:00+01:00</id><link href="undefinedblog/second-post"></link><updated >2015-03-08T00:00:00+01:00</updated><content type="html">&lt;p&gt;Posts are written in Markdown. More specifically, the kind of Markdown that&amp;apos;s called &lt;a href=&quot;http://commonmark.org/&quot;&gt;Commonmark&lt;/a&gt;. We&amp;apos;re guessing that you are familiar with Markdown, but anyway. Here are some of the things you can do with it.&lt;/p&gt;
 &lt;h2 id=&quot;headings-&quot;&gt;Headings!&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Lists&lt;/li&gt;
@@ -133,14 +133,368 @@
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;&gt;Links&lt;/a&gt; can take you to wonderful places.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Code can be written inline like this.&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(youWant) {
-  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;You can write code in blocks.&amp;apos;&lt;/span&gt;);
+  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&amp;apos;You can write code &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; blocks.&amp;apos;);
 }
 &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
-  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;hljs-string&quot;&gt;&amp;apos;Whatevs man.&amp;apos;&lt;/span&gt;);
+  &lt;span class=&quot;hljs-built_in&quot;&gt;console&lt;/span&gt;.log(&amp;apos;Whatevs man.&amp;apos;);
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to &lt;strong&gt;put emphasis&lt;/strong&gt; in certain things that&amp;apos;s also &lt;em&gt;pretty simple&lt;/em&gt;.&lt;/p&gt;
-</content></entry><entry ><title >This is the beginning of a beautiful friendship</title><id >athisisthebeginningofabeautifulfriendship2015-03-06t00:00:00+02:00</id><link href="https://antwarjs.github.io/blog/a-beautiful-friendship"></link><updated >2015-03-06T00:00:00+02:00</updated><content type="html">&lt;p&gt;This is the first post on the Antwar blog. The first post served by Antwar. I hope there will be many more. I hope that there are more people out there that want a simple and friendly blogging tool. Because that&amp;apos;s what we are trying to build.&lt;/p&gt;
+</content></entry><entry ><title >This is the beginning of a beautiful friendship</title><id >athisisthebeginningofabeautifulfriendship2015-03-06t00:00:00+01:00</id><link href="undefinedblog/a-beautiful-friendship"></link><updated >2015-03-06T00:00:00+01:00</updated><content type="html">&lt;p&gt;This is the first post on the Antwar blog. The first post served by Antwar. I hope there will be many more. I hope that there are more people out there that want a simple and friendly blogging tool. Because that&amp;apos;s what we are trying to build.&lt;/p&gt;
 &lt;p&gt;The project started out as a fork of Brad Denver&amp;apos;s experiment &lt;a href=&quot;http://braddenver.com/blog/2015/react-static-site.html&quot;&gt;react-static-site&lt;/a&gt;. We have come quite a long way already and we want to keep improving Antwar.&lt;/p&gt;
 &lt;p&gt;We would be happy if you wanted to try Antwar and give some feedback.&lt;/p&gt;
+</content></entry><entry ><title >Getting started</title><id >agettingstartedinvalid date</id><link href="undefineddocs/getting-started"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;Follow these steps to create your antwar site.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Download the command line tool.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm i antwar-cli -g
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a boilerplate project&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;antwar --init &amp;lt;directory name&amp;gt;
+cd &amp;lt;directory name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Start the development environment&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;antwar --develop (or -d &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; short)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add your content. When you&amp;apos;re ready, run  &lt;code&gt;antwar --build&lt;/code&gt; to generate the static files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content></entry><entry ><title >FAQ</title><id >afaqinvalid date</id><link href="undefineddocs/faq"></link><updated >Invalid date</updated><content type="html">&lt;h2 id=&quot;does-antwar-support-hot-module-reloading-&quot;&gt;Does Antwar Support Hot Module Reloading?&lt;/h2&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+&lt;h2 id=&quot;how-to-process-section-item-dates-&quot;&gt;How to Process Section Item Dates?&lt;/h2&gt;
+&lt;p&gt;By default Antwar will parse date based on Markdown YAML Headmatter. If that&amp;apos;s not enough for you, you can customize the behavior as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;paths: {
+  blog: {
+    processItem: {
+      date: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;hljs-comment&quot;&gt;// parse date from filename for instance&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;Date&lt;/span&gt;(o.fileName.split(&amp;apos;-&amp;apos;).slice(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;).join(&amp;apos;.&amp;apos;));
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;how-can-i-create-drafts-&quot;&gt;How Can I Create Drafts?&lt;/h2&gt;
+&lt;p&gt;Antwar allows you to mark section items as drafts. This means they will be visible only during development mode and won&amp;apos;t be included in the production build. Drafting is useful if you want to set up some content and publish it at a later time.&lt;/p&gt;
+&lt;p&gt;By default Antwar detects drafts through &lt;code&gt;isDraft&lt;/code&gt; flag. You can set this at item metadata (ie. YAML headmatter or custom). Alternatively you can tell Antwar to look for drafts in a specific directory. This can be configured as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;paths: {
+  blog: {
+    draft: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+      &lt;span class=&quot;hljs-comment&quot;&gt;// search recursively for Markdown drafts&lt;/span&gt;
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;require&lt;/span&gt;.context(&amp;apos;./drafts&amp;apos;, &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;hljs-regexp&quot;&gt;/^\.\/.*\.md$/&lt;/span&gt;);
+    },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this case publishing flow would be simple. You would just move drafts to directory set up in analogous &lt;code&gt;path&lt;/code&gt; configuration.&lt;/p&gt;
+&lt;h2 id=&quot;how-can-i-attach-custom-metadata-to-items-&quot;&gt;How Can I Attach Custom Metadata to Items?&lt;/h2&gt;
+&lt;p&gt;This can be achieved at &lt;code&gt;sort&lt;/code&gt; hook. In the following example I load custom order from an external file and then attach some metadata per each item.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;paths: {
+  blog: {
+    sort: &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;files&lt;/span&gt;) &lt;/span&gt;{
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; files.map(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;file&lt;/span&gt;) &lt;/span&gt;{
+        file.headerImage = &amp;apos;&lt;span class=&quot;hljs-regexp&quot;&gt;/images/&lt;/span&gt;demo.jpg&amp;apos;;
+
+        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; file;
+      });
+    },
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content></entry><entry ><title >Configuration</title><id >aconfigurationinvalid date</id><link href="undefineddocs/configuration"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;Just like &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt;, the heart of Antwar, also Antwar has been built on the configuration. &lt;code&gt;antwar.config.js&lt;/code&gt; describes all metadata related to your site. This includes basic information such as site title, author, sections and so on. It also defines which theme and which plugins you use.&lt;/p&gt;
+&lt;h2 id=&quot;basic-example&quot;&gt;Basic Example&lt;/h2&gt;
+&lt;p&gt;This is (more or less) the configuration for this site. If you are used to working with javascript, most of this should look familiar.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;apos;use strict&amp;apos;;
+
+var rssPlugin = require(&amp;apos;antwar-rss-plugin&amp;apos;);
+var prevnextPlugin = require(&amp;apos;antwar-prevnext-plugin&amp;apos;);
+var highlightPlugin = require(&amp;apos;antwar-highlight-plugin&amp;apos;);
+
+module.exports = {
+
+  // Folder name for the output
+  output: &amp;apos;build&amp;apos;,
+
+  // Name of the site
+  name: &amp;apos;Antwar&amp;apos;,
+
+  // Name of the author
+  author: &amp;apos;Antwar&amp;apos;,
+
+  // Branch to deploy to.
+  deploy: {
+    branch: &amp;apos;gh-pages&amp;apos;,
+  },
+
+  plugins: [
+    rssPlugin(),
+    prevnextPlugin(),
+    highlightPlugin({
+      style: function() {
+        require(&amp;apos;highlight.js/styles/github.css&amp;apos;);
+      },
+      languages: [&amp;apos;javascript&amp;apos;],
+    })
+  ],
+
+  // Definitions for where the content is located
+  paths: {
+    &amp;apos;/&amp;apos;: {
+      path: function() {
+        return require.context(&amp;apos;./pages&amp;apos;);
+      }
+    },
+    blog: {
+      path: function() {
+        return require.context(&amp;apos;./posts&amp;apos;, true, /^\.\/.*\.md$/);
+      },
+      draft: function() {
+        return require.context(&amp;apos;./drafts&amp;apos;, true, /^\.\/.*\.md$/);
+      },
+      layout: &amp;apos;blog&amp;apos;,
+      title: &amp;apos;Blog posts&amp;apos;,
+    },
+    docs: {
+      path: function() {
+        return require.context(&amp;apos;./docs&amp;apos;, true, /^\.\/.*\.md$/);
+      },
+      sort: function (items) {
+        return _.sortBy(items, function (item) {return item.file.sort});
+      },
+      processItem: {
+        isDraft: function(o) {
+          return o.file.isDraft;
+        },
+      },
+      layout: &amp;apos;docs&amp;apos;,
+      title: &amp;apos;Documentation&amp;apos;,
+    }
+  },
+
+  // Theme and config for the theme
+  theme: {
+    name: &amp;apos;antwar-default-theme&amp;apos;,
+    navigation: [
+      {title: &amp;apos;Home&amp;apos;, url: &amp;apos;/&amp;apos;},
+      {title: &amp;apos;Documentation&amp;apos;, url: &amp;apos;/docs&amp;apos;},
+      {title: &amp;apos;Blog&amp;apos;, url: &amp;apos;/blog&amp;apos;}
+    ],
+    analyticsId: &amp;apos;UA-XXXXXXXXX-1&amp;apos;,
+    customStyles: &amp;apos;specific.scss&amp;apos;,
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;advanced-configuration&quot;&gt;Advanced Configuration&lt;/h2&gt;
+&lt;p&gt;The configuration is available at page level so you can use it in quite imaginative manners.&lt;/p&gt;
+&lt;p&gt;To give you a better idea of how to approach configuration consider the real life example below. It has been taken from &lt;a href=&quot;http://survivejs.com/&quot;&gt;SurviveJS&lt;/a&gt; site and is actually quite advanced example. You don&amp;apos;t need anything this complex for a casual blog. The default settings will get you quite far with that.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;apos;use strict&amp;apos;;
+var _ = require(&amp;apos;lodash&amp;apos;);
+var removeMd = require(&amp;apos;remove-markdown&amp;apos;);
+var markdown = require(&amp;apos;commonmark&amp;apos;);
+var highlightPlugin = require(&amp;apos;antwar-highlight-plugin&amp;apos;);
+var prevnextPlugin = require(&amp;apos;antwar-prevnext-plugin&amp;apos;);
+
+var mdReader = new markdown.Parser();
+var mdWriter = new markdown.HtmlRenderer();
+
+module.exports = {
+  // copying files so I can refer to them easily from content
+  assets: [
+    {
+      from: &amp;apos;manuscript/images&amp;apos;,
+      to: &amp;apos;images&amp;apos;,
+    },
+    {
+      from: &amp;apos;./CNAME&amp;apos;,
+      to: &amp;apos;./&amp;apos;,
+    }
+  ],
+  // setting up general meta for output and such
+  output: &amp;apos;build&amp;apos;,
+  name: &amp;apos;SurviveJS - Survive the jungles of JavaScript&amp;apos;,
+  author: &amp;apos;Juho Veps&amp;#xE4;l&amp;#xE4;inen&amp;apos;,
+  deploy: {
+    branch: &amp;apos;gh-pages&amp;apos;,
+  },
+  // global plugins for whole site
+  plugins: [
+    highlightPlugin({
+      style: function() {
+        require(&amp;apos;highlight.js/styles/github.css&amp;apos;);
+      },
+      languages: [&amp;apos;bash&amp;apos;, &amp;apos;javascript&amp;apos;, &amp;apos;json&amp;apos;, &amp;apos;html&amp;apos;],
+    }),
+    prevnextPlugin({
+      bodyContent: prevnextPlugin.bodyContent({
+        previous: function(o) {
+          return o.title;
+        },
+        previousUrl: function(o) {
+          return &amp;apos;../&amp;apos; + o.split(&amp;apos;/&amp;apos;).slice(1).join(&amp;apos;/&amp;apos;);
+        },
+        next: function(o) {
+          return o.title;
+        },
+        nextUrl: function(o) {
+          return &amp;apos;../&amp;apos; + o.split(&amp;apos;/&amp;apos;).slice(1).join(&amp;apos;/&amp;apos;);
+        },
+      })
+    }),
+  ],
+  // choosing a theme and setting some theme specific settings
+  theme: {
+    customStyles: &amp;apos;custom.scss&amp;apos;,
+    name: &amp;apos;antwar-default-theme&amp;apos;,
+    navigation: [
+      {title: &amp;apos;Home&amp;apos;, url: &amp;apos;/&amp;apos;},
+      {title: &amp;apos;Table of Contents&amp;apos;, url: &amp;apos;/webpack_react&amp;apos;},
+    ],
+  },
+  // describing site structure and content mapping
+  paths: {
+    &amp;apos;/&amp;apos;: {
+      path: function() {
+        // require.context is a feature of Webpack. It just loads
+        // the content of given directory so we can process it
+        return require.context(&amp;apos;./pages&amp;apos;);
+      },
+    },
+    // mapping an ebook (directory of Markdown files) to a section
+    webpack_react: {
+      title: &amp;apos;Table of Contents&amp;apos;,
+      path: function() {
+        // here we want just Markdown files. In order to be future proof
+        // I get the files recursively (second parameter). This would
+        // just generate a deeper structure.
+        return require.context(&amp;apos;./manuscript&amp;apos;, true, /^\.\/.*\.md$/);
+      },
+      processItem: {
+        title: function(o) {
+          // picking title from first line (Markdown stripped)
+          return removeMd(o.file.__content.split(&amp;apos;\n&amp;apos;)[0]);
+        },
+        content: function(o) {
+          // picking everything except the first line (title, remember)
+          var content = o.file.__content.split(&amp;apos;\n&amp;apos;).slice(1).join(&amp;apos;\n&amp;apos;);
+
+          // rendering to html
+          return mdWriter.render(mdReader.parse(content));
+        },
+        preview: function(o) {
+          // picking a limited amount of content to show for preview
+          var previewLimit = 150;
+          var content = o.file.__content.split(&amp;apos;\n&amp;apos;).slice(1).join(&amp;apos;\n&amp;apos;);
+          var stripped = removeMd(content);
+
+          if(stripped.length &amp;gt; previewLimit) {
+            return stripped.substr(0, previewLimit) + &amp;apos;&amp;#x2026;&amp;apos;;
+          }
+
+          return stripped;
+        },
+      },
+      sort: function(files) {
+        // sorting section index based on an order defined at a separate file
+        var order = require(&amp;apos;raw!./manuscript/Book.txt&amp;apos;).split(&amp;apos;\n&amp;apos;).filter(id);
+        var ret = [];
+
+        order.forEach(function(name) {
+          var result = _.findWhere(files, {
+            name: name,
+          });
+
+          if(result) {
+            ret.push(result);
+          }
+        });
+
+        return ret;
+      },
+    }
+  }
+};
+
+function id(a) {return a;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In practice your configuration will likely look very different compared to this example. As you can see, Antwar allows you to shape a section mapping quite freely. The system leverages Webpack heavily.&lt;/p&gt;
+&lt;p&gt;In addition you may use whatever tricks you have as long as they work in frontend environment. This means you won&amp;apos;t have direct access to Node modules such as &lt;code&gt;fs&lt;/code&gt; but in practice this isn&amp;apos;t a problem as Webpack can help you as above.&lt;/p&gt;
+&lt;p&gt;Each of those &lt;code&gt;processItem&lt;/code&gt; hooks accepts an object as a parameter. Through it you can access &lt;code&gt;file&lt;/code&gt; (Webpack context object), &lt;code&gt;fileName&lt;/code&gt; (string) and &lt;code&gt;sectionName&lt;/code&gt; (string) data.&lt;/p&gt;
+</content></entry><entry ><title >Deploying to GitHub Pages</title><id >adeployingtogithubpagesinvalid date</id><link href="undefineddocs/deploying-to-github-pages"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;Antwar works very well with &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. Hosting your site there is simple. Follow the steps below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt; at your project directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add *&lt;/code&gt;, &lt;code&gt;git add .gitignore&lt;/code&gt;, &lt;code&gt;git commit -am &amp;quot;Initial commit&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/create-a-repo/&quot;&gt;Create a repository at GitHub and push the repo there&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;antwar --build&lt;/code&gt; (or &lt;code&gt;-b&lt;/code&gt; for short)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;antwar --deploy&lt;/code&gt; (or &lt;code&gt;-D&lt;/code&gt; for short)&lt;/li&gt;
+&lt;li&gt;Surf to &lt;code&gt;&amp;lt;user&amp;gt;.github.io/&amp;lt;project&amp;gt;&lt;/code&gt; and you should see your site there&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can also preview the site locally by going to your &lt;code&gt;build&lt;/code&gt; directory and serving the content through a static server. &lt;code&gt;serve&lt;/code&gt; works well. Just hit &lt;code&gt;npm i serve -g&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt;. The site will be available through port 3000 by default.&lt;/p&gt;
+&lt;h2 id=&quot;automating-deployment&quot;&gt;Automating Deployment&lt;/h2&gt;
+&lt;p&gt;You can automate this procedure easily through Travis. See &lt;a href=&quot;https://gist.github.com/domenic/ec8b0fc8ab45f39403dd&quot;&gt;@domenic&amp;apos;s instructions&lt;/a&gt; for one way to achieve this. Adapt as needed.&lt;/p&gt;
+&lt;h2 id=&quot;setting-up-your-domain&quot;&gt;Setting Up Your Domain&lt;/h2&gt;
+&lt;p&gt;First of all you should &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;set up a CNAME file&lt;/a&gt; to project root. In addition you&amp;apos;ll need to make Antwar to include it with your build through configuration like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;assets: [
+  {
+    from: &amp;apos;./CNAME&amp;apos;,
+    to: &amp;apos;./&amp;apos;,
+  },
+  ...
+],
+&lt;/code&gt;&lt;/pre&gt;
+</content></entry><entry ><title >Theming</title><id >atheminginvalid date</id><link href="undefineddocs/themes"></link><updated >Invalid date</updated><content type="html">&lt;p&gt;The building blocks of Antwar themes are React components. They serve as templates for the pages on your site. The &lt;a href=&quot;https://github.com/antwarjs/default-theme&quot;&gt;default Antwar theme&lt;/a&gt; is a good place to look for inspiration.&lt;/p&gt;
+&lt;p&gt;There are a few required file in an Antwar theme. Antwar handles js, jsx and coffeescript files.&lt;/p&gt;
+&lt;h2 id=&quot;required-files&quot;&gt;Required Files&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A React component that will be put directly in the body tag and which should render content that all routes of your sites have in common. This component is responsible for rendering its children.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SectionIndex&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The index for sections. Normally used to display a summary of the content in that section.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SectionItem&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Outputs the content of an item.&lt;/p&gt;
+&lt;h2 id=&quot;optional-files&quot;&gt;Optional Files&lt;/h2&gt;
+&lt;p&gt;A theme can contain any files, but there are a few that Antwar core looks for.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;functions.js&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Functions that hook into Antwar&amp;apos;s parsing and item generation. For example if you want to control how urls are generated or how the content is parsed before it&amp;apos;s passed to the components. (Full docs on these functions in the next section).&lt;/p&gt;
+&lt;h2 id=&quot;processing-hooks&quot;&gt;Processing Hooks&lt;/h2&gt;
+&lt;p&gt;Antwar core provides some hooks into the post processing. Define functions in the file &lt;strong&gt;&lt;em&gt;functions(.js/.coffee)&lt;/em&gt;&lt;/strong&gt; in the root of your theme.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;preProcessItems(items)&lt;/code&gt;
+Called before items are processed by Antwar. Has to return an object with the same structure as the input.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;postProcessItems(items)&lt;/code&gt;
+Called after items are processed by Antwar. Has to return an object with the same structure as the input.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;url(file, fileName)&lt;/code&gt;
+Override the default url of the item. Has to return a string that is unique for each item.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;date(file, fileName)&lt;/code&gt;
+Override the default date field of the item. Has to return a string.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;preview(file, fileName)&lt;/code&gt;
+Override the default preview of the item. Has to return a string.&lt;/p&gt;
+&lt;h2 id=&quot;theming-helpers&quot;&gt;Theming Helpers&lt;/h2&gt;
+&lt;h3 id=&quot;pathsmixin&quot;&gt;PathsMixin&lt;/h3&gt;
+&lt;p&gt;The PathsMixin has methods for getting items. &lt;code&gt;require(&amp;apos;antwar-core/PathsMixin&amp;apos;)&lt;/code&gt; includes the mixin.&lt;/p&gt;
+&lt;p&gt;These functions are provided by PathsMixin.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this.getAllItems()&lt;/code&gt;
+Returns all the items of the site.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this.getItem()&lt;/code&gt;
+Get the item for the current path.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this.getItemForPath(path)&lt;/code&gt;
+Get the item for a specific path.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this.getSectionItems()&lt;/code&gt;
+Returns all the items of the current section.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this.getSection()&lt;/code&gt;
+Returns the object describing the current section.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this.getSectionTitle()&lt;/code&gt;
+Returns the title of the current section.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this.getSectionName()&lt;/code&gt;
+Returns the name of the current section&lt;/p&gt;
+&lt;h3 id=&quot;core-components&quot;&gt;Core Components&lt;/h3&gt;
+&lt;p&gt;Antwar core provides a couple of components that themes can use.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;NavigationLink&lt;/code&gt;
+Takes an item as prop and outputs a link to that item.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;SectionLink&lt;/code&gt;
+Takes an item as prop and outputs a link to that item. Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&amp;lt;SectionLink item={item} /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where &lt;code&gt;item&lt;/code&gt; is a section item.&lt;/p&gt;
+&lt;h3 id=&quot;mdhelper&quot;&gt;MdHelper&lt;/h3&gt;
+&lt;p&gt;Exposes functions to parse Markdown files.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;render(markdown)&lt;/code&gt;
+Returns given Markdown as HTML. Uses &lt;a href=&quot;https://www.npmjs.com/package/marked&quot;&gt;marked&lt;/a&gt; by default.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;getContentPreview(markdown, limit, endChar)&lt;/code&gt;
+Returns given Markdown as a stripped version (no HTML). If its length would be less than given &lt;code&gt;limit&lt;/code&gt;, returns content up to that point and appends the given &lt;code&gt;endChar&lt;/code&gt; to it.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;parse(content)&lt;/code&gt;
+Returns the parsed content of a .md file as a json object.&lt;/p&gt;
 </content></entry></feed>

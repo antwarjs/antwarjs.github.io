@@ -7,7 +7,7 @@
     processItem: {
       date: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">o</span>) </span>{
         <span class="hljs-comment">// parse date from filename for instance</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(o.fileName.split(<span class="hljs-string">&apos;-&apos;</span>).slice(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>).join(<span class="hljs-string">&apos;.&apos;</span>));
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(o.fileName.split(&apos;-&apos;).slice(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>).join(&apos;.&apos;));
       }
     }
   }
@@ -20,7 +20,7 @@
   blog: {
     draft: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
       <span class="hljs-comment">// search recursively for Markdown drafts</span>
-      <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(<span class="hljs-string">&apos;./drafts&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^\.\/.*\.md$/</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.context(&apos;./drafts&apos;, <span class="hljs-literal">true</span>, <span class="hljs-regexp">/^\.\/.*\.md$/</span>);
     },
 </code></pre>
 <p>In this case publishing flow would be simple. You would just move drafts to directory set up in analogous <code>path</code> configuration.</p>
@@ -30,7 +30,7 @@
   blog: {
     sort: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">files</span>) </span>{
       <span class="hljs-keyword">return</span> files.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{
-        file.headerImage = <span class="hljs-string">&apos;/images/demo.jpg&apos;</span>;
+        file.headerImage = &apos;<span class="hljs-regexp">/images/</span>demo.jpg&apos;;
 
         <span class="hljs-keyword">return</span> file;
       });
